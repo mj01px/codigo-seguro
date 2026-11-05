@@ -1,0 +1,43 @@
+:root {
+  /* Cores da identidade visual */
+  --color-navy: #1C2541;
+  --color-yellow: #FFD447;
+  --color-mint: #9EDFC3;
+  --color-mint-light: #D3F1E3;
+  --color-green-dark: #0E6B4B;
+  --color-wine: #A61E3A;
+  --color-white: #FFFFFF;
+  --color-dot: #D5DBE6;
+
+  /* Fontes */
+  --font-display: 'Permanent Marker', cursive;
+  --font-body: 'Lexend', system-ui, -apple-system, sans-serif;
+
+  /* Raios e bordas */
+  --radius-card: 12px;
+  --radius-pill: 999px;
+  --border-width: 2px;
+  --border-solid: var(--border-width) solid var(--color-navy);
+
+  /* Sombras duras (sem desfoque) */
+  --shadow-hard: 3px 3px 0 var(--color-navy);
+  --shadow-hard-lg: 5px 5px 0 var(--color-navy);
+  --shadow-hard-active: 1px 1px 0 var(--color-navy);
+
+  /* Escala tipográfica (mínimo 18px no corpo) */
+  --font-scale: 1;
+  --text-sm: calc(1rem * var(--font-scale));        /* 18px base */
+  --text-base: calc(1.125rem * var(--font-scale));  /* 20px */
+  --text-lg: calc(1.25rem * var(--font-scale));     /* 22.5px */
+  --text-xl: calc(1.5rem * var(--font-scale));      /* 27px */
+  --text-2xl: calc(2rem * var(--font-scale));       /* 36px */
+  --text-hero: clamp(2.15rem, 4.2vw, 3.25rem);
+
+  /* Espaçamento e layout */
+  --container-max: 1120px;
+  --header-height: 76px;
+}
+
+html[data-large-text="true"] {
+  --font-scale: 1.18;
+}
