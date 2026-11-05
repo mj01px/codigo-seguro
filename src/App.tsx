@@ -1,6 +1,12 @@
 import { Header } from './components/Header';
 import { Footer } from './components/Footer';
 import { Hero } from './sections/Hero';
+import { Simulator } from './sections/Simulator';
+import { HowItWorks } from './sections/HowItWorks';
+import { Protect } from './sections/Protect';
+import { AlreadyStolen } from './sections/AlreadyStolen';
+import { Family } from './sections/Family';
+import { Pamphlet } from './sections/Pamphlet';
 import { useFontSize } from './hooks/useFontSize';
 import { useReadAloud } from './hooks/useReadAloud';
 
@@ -24,6 +30,12 @@ export function App() {
 
       <main id="conteudo-principal">
         <Hero />
+        <Simulator />
+        <HowItWorks />
+        <Protect />
+        <AlreadyStolen />
+        <Family />
+        <Pamphlet />
       </main>
 
       <Footer />
