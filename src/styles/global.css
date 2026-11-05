@@ -11,7 +11,21 @@
 html {
   font-size: 18px;
   scroll-behavior: smooth;
-  scroll-padding-top: calc(var(--header-height) + 16px);
+  scroll-padding-top: calc(var(--header-height) + 18px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }
 
 body {
@@ -24,7 +38,21 @@ body {
   background-image: radial-gradient(var(--color-dot) 1.1px, transparent 1.3px);
   background-size: 14px 14px;
   min-height: 100vh;
+  overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
+}
+
+/* Utilitário apenas para leitores de tela */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }
 
 /* Foco visível de alto contraste para navegação por teclado */
@@ -33,7 +61,7 @@ body {
   outline-offset: 3px;
 }
 
-/* Link de pular para o conteúdo (acessibilidade) */
+/* Link de pular para o conteúdo */
 .skip-link {
   position: absolute;
   top: -100px;
@@ -64,14 +92,24 @@ body {
 .mark-yellow {
   background-color: var(--color-yellow);
   color: var(--color-navy);
-  padding: 0.05em 0.3em;
+  padding: 0.04em 0.28em;
   border-radius: 6px;
   font-weight: 700;
   box-decoration-break: clone;
   -webkit-box-decoration-break: clone;
 }
 
-/* Cabeçalho fixo */
+.inline-link {
+  color: var(--color-green-dark);
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  word-break: break-word;
+}
+
+/* ==========================================================================
+   CABEÇALHO FIXO
+   ========================================================================== */
 .site-header {
   position: sticky;
   top: 0;
@@ -85,40 +123,99 @@ body {
 
 .site-header__inner {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
-  gap: 16px;
+  gap: 12px 20px;
   padding-top: 12px;
   padding-bottom: 12px;
 }
 
-.site-header__brand {
-  font-family: var(--font-display);
-  font-size: clamp(1.35rem, 3vw, 1.75rem);
-  color: var(--color-navy);
-  text-decoration: none;
-  letter-spacing: 0.02em;
-  display: inline-flex;
+.site-header__top {
+  display: flex;
   align-items: center;
-  gap: 10px;
+  justify-content: space-between;
+  gap: 16px;
+  flex: 1 1 auto;
 }
 
-.site-header__brand-badge {
-  background-color: var(--color-yellow);
-  border: var(--border-solid);
-  border-radius: 8px;
-  padding: 2px 10px;
-  box-shadow: 2px 2px 0 var(--color-navy);
+.site-header__brand {
+  font-family: var(--font-body);
+  font-weight: 800;
+  font-size: clamp(1.2rem, 2.5vw, 1.45rem);
+  color: var(--color-navy);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.site-header__lock-icon {
+  flex-shrink: 0;
+  color: var(--color-navy);
+}
+
+.site-header__nav {
+  flex: 1 1 auto;
+  display: flex;
+  justify-content: center;
+}
+
+.site-header__nav-list {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px 14px;
+}
+
+.site-header__nav-link {
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--color-navy);
+  text-decoration: none;
+  padding: 4px 8px;
+  border-radius: 6px;
+}
+
+.site-header__nav-link:hover {
+  background-color: var(--color-mint-light);
+  text-decoration: underline;
+  text-underline-offset: 3px;
 }
 
 .site-header__controls {
   display: flex;
   align-items: center;
-  gap: 10px;
-  flex-wrap: wrap;
+  gap: 8px;
 }
 
-/* Botões e controles */
+@media (min-width: 980px) {
+  .site-header__inner {
+    flex-wrap: nowrap;
+  }
+
+  .site-header__top {
+    display: contents;
+  }
+
+  .site-header__brand {
+    order: 1;
+  }
+
+  .site-header__nav {
+    order: 2;
+  }
+
+  .site-header__controls {
+    order: 3;
+  }
+}
+
+/* ==========================================================================
+   BOTÕES E CARDS
+   ========================================================================== */
 .btn {
   display: inline-flex;
   align-items: center;
@@ -159,43 +256,85 @@ body {
 }
 
 .btn--control {
-  padding: 8px 14px;
-  font-size: 0.95rem;
+  padding: 6px 12px;
+  font-size: 0.92rem;
 }
 
 .btn--control[aria-pressed="true"] {
   background-color: var(--color-yellow);
 }
 
-/* Cards */
 .card {
   background-color: var(--color-white);
   border: var(--border-solid);
   border-radius: var(--radius-card);
   box-shadow: var(--shadow-hard);
-  padding: 20px;
+  padding: 24px;
 }
 
 .card--mint {
   background-color: var(--color-mint-light);
 }
 
-/* Seções */
+/* ==========================================================================
+   SEÇÕES E TÍTULOS PADRÃO
+   ========================================================================== */
 .section {
-  padding: 48px 0 64px;
+  padding: 64px 0;
+  border-bottom: var(--border-subtle);
 }
 
-/* Seção Hero */
+.section--dots {
+  background-color: var(--color-white);
+  background-image: radial-gradient(var(--color-dot) 1.1px, transparent 1.3px);
+  background-size: 14px 14px;
+}
+
+.section--mint {
+  background-color: var(--color-mint-light);
+  background-image: none;
+}
+
+.section-header {
+  max-width: 720px;
+  margin-bottom: 36px;
+}
+
+.section-title {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: var(--text-2xl);
+  line-height: 1.2;
+  color: var(--color-navy);
+  margin-bottom: 10px;
+}
+
+.section-subtitle {
+  font-size: var(--text-base);
+  font-weight: 500;
+  color: var(--color-navy);
+}
+
+/* ==========================================================================
+   SEÇÃO HERO (INÍCIO)
+   ========================================================================== */
+.section--hero {
+  min-height: calc(100vh - var(--header-height));
+  display: flex;
+  align-items: center;
+  padding: 40px 0 56px;
+}
+
 .hero__grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 40px;
+  gap: 44px;
   align-items: center;
 }
 
-@media (min-width: 900px) {
+@media (min-width: 920px) {
   .hero__grid {
-    grid-template-columns: 1.1fr 0.9fr;
+    grid-template-columns: 1.05fr 0.95fr;
     gap: 48px;
   }
 }
@@ -204,14 +343,13 @@ body {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 18px;
+  gap: 16px;
 }
 
 .hero__university {
   font-size: var(--text-sm);
   font-weight: 700;
   color: var(--color-navy);
-  letter-spacing: 0.02em;
 }
 
 .hero__badge {
@@ -219,38 +357,44 @@ body {
   background-color: var(--color-wine);
   color: var(--color-white);
   font-weight: 800;
-  font-size: 0.95rem;
+  font-size: 0.92rem;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  padding: 6px 14px;
-  border: var(--border-solid);
-  border-radius: var(--radius-card);
-  box-shadow: var(--shadow-hard);
+  padding: 5px 14px;
+  border-radius: 8px;
 }
 
 .hero__title {
   font-family: var(--font-display);
   font-weight: 400;
   font-size: var(--text-hero);
-  line-height: 1.18;
+  line-height: 1.15;
   color: var(--color-navy);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+}
+
+.hero__title-line {
+  display: block;
 }
 
 .hero__title-code {
   position: relative;
   display: inline-block;
-  font-size: 1.28em;
+  font-size: 1.38em;
+  line-height: 1.05;
   color: var(--color-green-dark);
-  margin: 0 0.08em;
-  white-space: nowrap;
+  margin: 2px 0 8px;
 }
 
 .hero__title-underline {
   position: absolute;
   left: -2%;
-  bottom: -6px;
+  bottom: -8px;
   width: 104%;
-  height: 12px;
+  height: 13px;
   pointer-events: none;
 }
 
@@ -258,68 +402,79 @@ body {
   font-size: var(--text-base);
   font-weight: 500;
   color: var(--color-navy);
-  max-width: 58ch;
+  max-width: 54ch;
 }
 
 .hero__actions {
   display: flex;
   flex-wrap: wrap;
-  gap: 16px;
+  gap: 14px;
   margin-top: 8px;
   width: 100%;
 }
 
 .hero__actions .btn {
-  flex: 1 1 260px;
+  flex: 1 1 250px;
 }
 
-/* Ilustração do Hero em HTML/CSS */
-.hero-illustration {
+/* Ilustração solta sobre mancha menta orgânica */
+.hero-stage {
   position: relative;
-  background-color: var(--color-mint);
-  border: var(--border-solid);
-  border-radius: var(--radius-card);
-  box-shadow: var(--shadow-hard);
-  padding: 24px 20px 28px;
   display: flex;
   flex-direction: column;
-  gap: 18px;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 8px 28px;
+  min-height: 490px;
 }
 
-.caller-row {
+.hero-stage__blob {
+  position: absolute;
+  inset: 12px 4px 12px 4px;
+  background-color: var(--color-mint-light);
+  border-radius: 44% 56% 52% 48% / 40% 46% 54% 60%;
+  z-index: 0;
+}
+
+/* Ligação + balão de fala */
+.hero-stage__caller {
+  position: relative;
+  z-index: 2;
   display: flex;
   align-items: flex-start;
-  gap: 12px;
+  gap: 14px;
+  width: 100%;
+  max-width: 430px;
+  margin-bottom: -14px;
 }
 
-.caller-badge {
+.caller-pill {
   background-color: var(--color-white);
   border: var(--border-solid);
   border-radius: var(--radius-card);
-  box-shadow: var(--shadow-hard);
-  padding: 10px 12px;
+  padding: 8px 10px;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 4px;
-  min-width: 112px;
+  width: 108px;
+  flex-shrink: 0;
   text-align: center;
 }
 
-.caller-badge__icon {
+.caller-pill__icon {
   width: 34px;
   height: 34px;
   background-color: var(--color-wine);
   color: var(--color-white);
-  border: var(--border-solid);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.caller-badge__label {
-  font-size: 0.78rem;
+.caller-pill__label {
+  font-size: 0.75rem;
   font-weight: 800;
   line-height: 1.2;
   color: var(--color-navy);
@@ -331,15 +486,14 @@ body {
   background-color: var(--color-yellow);
   border: var(--border-solid);
   border-radius: var(--radius-card);
-  box-shadow: var(--shadow-hard);
-  padding: 12px 16px;
-  font-size: 0.95rem;
+  padding: 12px 14px;
+  font-size: 0.94rem;
   font-weight: 700;
   line-height: 1.35;
   color: var(--color-navy);
 }
 
-/* Apontador do balão de fala */
+/* Rabinho apontando para o ícone de telefone à esquerda */
 .speech-bubble::before {
   content: '';
   position: absolute;
@@ -364,115 +518,700 @@ body {
   border-right: 9px solid var(--color-yellow);
 }
 
-/* Celular em CSS */
-.phone-mockup {
+/* Celular em pé (proporção ~230x460 no desktop, inclinado 4deg) */
+.phone-portrait {
   position: relative;
+  z-index: 1;
+  width: 230px;
+  height: 450px;
   background-color: var(--color-navy);
-  border: var(--border-solid);
-  border-radius: 22px;
-  box-shadow: var(--shadow-hard);
-  padding: 14px 12px 18px;
-  max-width: 360px;
-  width: 100%;
-  margin: 0 auto;
+  border: 3px solid var(--color-navy);
+  border-radius: 32px;
+  padding: 10px 10px 14px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transform: rotate(4deg);
+  margin-top: 18px;
 }
 
-.phone-mockup__speaker {
-  width: 56px;
+.phone-portrait__notch {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 4px 0 8px;
+}
+
+.phone-portrait__speaker {
+  width: 54px;
   height: 6px;
-  background-color: var(--color-white);
+  background-color: var(--color-mint-light);
   border-radius: 999px;
-  margin: 0 auto 12px;
 }
 
-.phone-mockup__screen {
+.phone-portrait__screen {
+  flex: 1;
   background-color: var(--color-mint-light);
+  border-radius: 20px;
+  padding: 16px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.phone-portrait__time {
+  text-align: center;
+  font-weight: 800;
+  font-size: 1.35rem;
+  color: var(--color-navy);
+  letter-spacing: 0.04em;
+  opacity: 0.85;
+}
+
+.sms-notification {
+  background-color: var(--color-white);
   border: var(--border-solid);
-  border-radius: 12px;
-  padding: 16px 14px;
+  border-radius: 10px;
+  padding: 10px 11px;
+}
+
+.sms-notification__header {
+  font-size: 0.72rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--color-green-dark);
+  margin-bottom: 4px;
+}
+
+.sms-notification__body {
+  font-size: 0.86rem;
+  font-weight: 600;
+  line-height: 1.38;
+  color: var(--color-navy);
+}
+
+.sms-notification__code {
+  display: inline-block;
+  background-color: var(--color-yellow);
+  padding: 0 5px;
+  border-radius: 4px;
+  font-weight: 800;
+}
+
+.phone-portrait__homebar {
+  width: 72px;
+  height: 5px;
+  background-color: var(--color-mint-light);
+  border-radius: 999px;
+  margin: 10px auto 2px;
+}
+
+/* Carimbo sobrepondo o canto inferior do celular sem cobrir o SMS */
+.stamp-alert {
+  position: absolute;
+  bottom: 34px;
+  right: -28px;
+  background-color: var(--color-wine);
+  color: var(--color-white);
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  letter-spacing: 0.05em;
+  padding: 6px 14px;
+  border: var(--border-solid);
+  border-radius: var(--radius-card);
+  transform: rotate(-10deg);
+  white-space: nowrap;
+}
+
+@media (max-width: 480px) {
+  .phone-portrait {
+    width: 215px;
+    height: 420px;
+    transform: rotate(2deg);
+  }
+
+  .stamp-alert {
+    right: -10px;
+    bottom: 28px;
+    font-size: 1.1rem;
+  }
+
+  .caller-pill {
+    width: 92px;
+    padding: 6px 8px;
+  }
+}
+
+/* ==========================================================================
+   1) SIMULADOR
+   ========================================================================== */
+.simulator-shell {
+  background-color: var(--color-white);
+  border: var(--border-solid);
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-hard);
+  overflow: hidden;
+  max-width: 780px;
+}
+
+.simulator-topbar {
+  background-color: var(--color-navy);
+  color: var(--color-white);
+  padding: 14px 18px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.simulator-contact {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 700;
+  font-size: 0.95rem;
+}
+
+.simulator-contact__dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: var(--color-yellow);
+  flex-shrink: 0;
+}
+
+.simulator-meta {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.simulator-step-indicator {
+  font-size: 0.9rem;
+  font-weight: 700;
+  background-color: rgba(255, 255, 255, 0.14);
+  padding: 4px 10px;
+  border-radius: 6px;
+}
+
+.simulator-sms-banner {
+  margin: 16px 18px 0;
+  padding: 12px 16px;
+  background-color: var(--color-yellow);
+  border: var(--border-solid);
+  border-radius: var(--radius-card);
+}
+
+.simulator-sms-banner__badge {
+  font-size: 0.78rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 4px;
+}
+
+.simulator-sms-banner__text {
+  font-weight: 700;
+  font-size: var(--text-sm);
+}
+
+.simulator-chat {
+  padding: 20px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  background-color: var(--color-white);
+}
+
+.simulator-turn {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.chat-msg {
+  max-width: 88%;
+  padding: 12px 16px;
+  border-radius: var(--radius-card);
+  border: var(--border-solid);
+}
+
+.chat-msg__sender {
+  display: block;
+  font-size: 0.78rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-bottom: 4px;
+}
+
+.chat-msg--scammer {
+  align-self: flex-start;
+  background-color: var(--color-white);
+}
+
+.chat-msg--scammer .chat-msg__sender {
+  color: var(--color-wine);
+}
+
+.chat-msg--user {
+  align-self: flex-end;
+  background-color: var(--color-yellow);
+}
+
+.simulator-tip {
+  background-color: var(--color-mint-light);
+  border-left: 4px solid var(--color-green-dark);
+  padding: 10px 14px;
+  border-radius: 6px;
+  font-size: 0.95rem;
+}
+
+.simulator-options {
+  border-top: var(--border-subtle);
+  padding: 18px;
+  background-color: #F8FAFC;
+}
+
+.simulator-options__prompt {
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.simulator-options__list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.simulator-option-btn {
+  width: 100%;
+  justify-content: flex-start;
+  text-align: left;
+}
+
+.simulator-outcome {
+  margin: 0 18px 18px;
+  padding: 20px;
+  border: var(--border-solid);
+  border-radius: var(--radius-card);
+}
+
+.simulator-outcome--lost {
+  background-color: var(--color-wine-light);
+}
+
+.simulator-outcome--won {
+  background-color: var(--color-mint);
+}
+
+.simulator-outcome__title {
+  font-family: var(--font-body);
+  font-weight: 800;
+  font-size: var(--text-lg);
+  margin-bottom: 8px;
+}
+
+.simulator-outcome__text {
+  margin-bottom: 16px;
+}
+
+.simulator-outcome__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+/* ==========================================================================
+   2 & 3) COMO O GOLPE ACONTECE + SINAIS DE ALERTA
+   ========================================================================== */
+.steps-grid {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+  margin-bottom: 36px;
+}
+
+@media (min-width: 820px) {
+  .steps-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.step-item {
+  background-color: var(--color-mint-light);
+  border-radius: var(--radius-card);
+  padding: 22px 20px;
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
 
-.sms-card {
+.step-item__number {
+  font-family: var(--font-display);
+  font-size: 2.8rem;
+  line-height: 1;
+  color: var(--color-navy);
+}
+
+.step-item__number--danger {
+  color: var(--color-wine);
+}
+
+.step-item__title {
+  font-size: var(--text-lg);
+  font-weight: 800;
+}
+
+/* Card único de destaque da seção */
+.golden-rule-banner {
+  background-color: var(--color-yellow);
+  border: var(--border-solid);
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-hard);
+  padding: 22px 24px;
+  margin-bottom: 44px;
+}
+
+.golden-rule-banner__text {
+  font-size: var(--text-lg);
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.warnings-block__title {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: var(--text-xl);
+  margin-bottom: 20px;
+}
+
+.warnings-grid {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+
+@media (min-width: 720px) {
+  .warnings-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.warning-item {
+  background-color: var(--color-white);
+  border: var(--border-subtle);
+  border-radius: var(--radius-card);
+  padding: 16px 18px;
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+}
+
+.warning-item__icon {
+  flex-shrink: 0;
+  margin-top: 2px;
+  color: var(--color-navy);
+}
+
+.warning-item__title {
+  display: block;
+  font-weight: 800;
+  margin-bottom: 2px;
+}
+
+/* ==========================================================================
+   4) TRANQUE SEU WHATSAPP (CHECKLIST + DICAS PIN)
+   ========================================================================== */
+.protect-layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 32px;
+  align-items: start;
+}
+
+@media (min-width: 900px) {
+  .protect-layout {
+    grid-template-columns: 1.35fr 0.65fr;
+  }
+}
+
+.platform-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.platform-tab {
+  min-width: 140px;
+}
+
+.platform-tab--active {
+  background-color: var(--color-yellow);
+}
+
+.checklist-panel {
+  background-color: var(--color-white);
+  border-radius: var(--radius-card);
+  padding: 24px 20px;
+}
+
+.checklist-progress {
+  margin-bottom: 20px;
+}
+
+.checklist-progress__header {
+  display: flex;
+  justify-content: space-between;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.checklist-progress__bar {
+  width: 100%;
+  height: 14px;
+  background-color: var(--color-mint-light);
+  border: var(--border-solid);
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.checklist-progress__fill {
+  height: 100%;
+  background-color: var(--color-green-dark);
+  transition: width 0.2s ease;
+}
+
+.checklist-items {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.checklist-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 10px 12px;
+  border-radius: 8px;
+  background-color: #F8FAFC;
+}
+
+.checklist-item--done {
+  background-color: var(--color-mint-light);
+}
+
+.checklist-item__checkbox {
+  width: 24px;
+  height: 24px;
+  margin-top: 3px;
+  accent-color: var(--color-green-dark);
+  flex-shrink: 0;
+  cursor: pointer;
+}
+
+.checklist-item__label {
+  cursor: pointer;
+  font-weight: 600;
+  flex: 1;
+}
+
+.checklist-item--done .checklist-item__label {
+  text-decoration: line-through;
+}
+
+.checklist-item__num {
+  font-weight: 800;
+  color: var(--color-green-dark);
+}
+
+.checklist-complete {
+  margin-top: 18px;
+  padding: 14px 16px;
+  background-color: var(--color-yellow);
+  border: var(--border-solid);
+  border-radius: var(--radius-card);
+  font-weight: 800;
+  text-align: center;
+}
+
+.checklist-note {
+  margin-top: 16px;
+  font-size: 0.9rem;
+  opacity: 0.9;
+}
+
+/* Card único de destaque da seção Proteger */
+.pin-tips-card {
   background-color: var(--color-white);
   border: var(--border-solid);
   border-radius: var(--radius-card);
   box-shadow: var(--shadow-hard);
-  padding: 12px 14px;
+  padding: 24px 20px;
 }
 
-.sms-card__header {
+.pin-tips-card__title {
+  font-size: var(--text-lg);
+  font-weight: 800;
+  margin-bottom: 14px;
+}
+
+.pin-tips-card__list {
+  padding-left: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* ==========================================================================
+   5) JÁ ROUBARAM?
+   ========================================================================== */
+.recovery-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-width: 840px;
+}
+
+.recovery-item {
+  background-color: var(--color-mint-light);
+  border-radius: var(--radius-card);
+  padding: 20px;
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+/* Card de destaque único da seção */
+.recovery-item--highlight {
+  background-color: var(--color-white);
+  border: var(--border-solid);
+  box-shadow: var(--shadow-hard);
+}
+
+.recovery-item__num {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  line-height: 1;
+  color: var(--color-green-dark);
+  min-width: 28px;
+}
+
+.recovery-item__body {
+  flex: 1;
+  min-width: 0;
+}
+
+.recovery-item__title {
+  font-size: var(--text-base);
+  font-weight: 800;
+  margin-bottom: 4px;
+}
+
+.recovery-item__actions {
+  margin-top: 14px;
+}
+
+/* ==========================================================================
+   6) PROTEJA QUEM VOCÊ AMA (FAMÍLIA)
+   ========================================================================== */
+.family-grid {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 18px;
+  margin-bottom: 28px;
+}
+
+@media (min-width: 720px) {
+  .family-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.family-item {
+  background-color: var(--color-white);
+  border-radius: var(--radius-card);
+  padding: 20px;
+}
+
+.family-item__title {
+  font-size: var(--text-base);
+  font-weight: 800;
+  margin-bottom: 6px;
+  color: var(--color-green-dark);
+}
+
+.family-cta {
+  display: flex;
+  justify-content: flex-start;
+}
+
+/* ==========================================================================
+   7) PANFLETO
+   ========================================================================== */
+.pamphlet-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+  margin-bottom: 28px;
+}
+
+@media (min-width: 720px) {
+  .pamphlet-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.pamphlet-figure {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.pamphlet-figure__frame {
+  background-color: var(--color-mint-light);
+  border: var(--border-subtle);
+  border-radius: var(--radius-card);
+  padding: 16px;
+  min-height: 220px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  font-size: 0.78rem;
-  font-weight: 800;
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
-  color: var(--color-green-dark);
-  margin-bottom: 6px;
+  justify-content: center;
 }
 
-.sms-card__body {
-  font-size: 0.95rem;
-  font-weight: 600;
-  line-height: 1.4;
-  color: var(--color-navy);
-}
-
-.sms-card__code {
-  display: inline-block;
-  background-color: var(--color-yellow);
-  border: var(--border-solid);
+.pamphlet-figure__img {
+  max-width: 100%;
+  height: auto;
+  display: block;
   border-radius: 6px;
-  padding: 1px 8px;
+}
+
+.pamphlet-figure__caption {
   font-weight: 800;
-  letter-spacing: 0.06em;
-  margin: 2px 0;
+  text-align: center;
 }
 
-/* Carimbo inclinado "NÃO PASSE!" */
-.stamp-alert {
-  align-self: flex-end;
-  background-color: var(--color-wine);
-  color: var(--color-white);
-  font-family: var(--font-display);
-  font-size: 1.35rem;
-  letter-spacing: 0.05em;
-  padding: 6px 16px;
-  border: 3px solid var(--color-navy);
-  border-radius: var(--radius-card);
-  box-shadow: var(--shadow-hard);
-  transform: rotate(-7deg);
-  margin-top: -6px;
+.pamphlet-actions {
+  display: flex;
+  justify-content: flex-start;
 }
 
-@media (max-width: 520px) {
-  .caller-row {
-    flex-direction: column;
-    align-items: stretch;
-  }
-
-  .caller-badge {
-    flex-direction: row;
-    justify-content: flex-start;
-    gap: 10px;
-  }
-
-  .speech-bubble::before,
-  .speech-bubble::after {
-    display: none;
-  }
-}
-
-/* Rodapé */
+/* ==========================================================================
+   RODAPÉ
+   ========================================================================== */
 .site-footer {
   background-color: var(--color-mint-light);
   border-top: var(--border-solid);
-  padding: 32px 0;
-  margin-top: 32px;
+  padding: 36px 0;
 }
 
 .site-footer__inner {

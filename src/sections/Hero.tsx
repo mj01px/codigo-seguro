@@ -3,7 +3,12 @@ import { Section } from '../components/Section';
 
 export function Hero() {
   return (
-    <Section id="inicio" aria-labelledby="hero-title">
+    <Section
+      id="inicio"
+      tone="dots"
+      className="section--hero"
+      aria-labelledby="hero-title"
+    >
       <div className="hero__grid">
         <div className="hero__content">
           <p className="hero__university">Universidade de Mogi das Cruzes</p>
@@ -11,7 +16,7 @@ export function Hero() {
           <span className="hero__badge">ALERTA DE GOLPE</span>
 
           <h1 id="hero-title" className="hero__title">
-            Nunca passe o{' '}
+            <span className="hero__title-line">Nunca passe o</span>
             <span className="hero__title-code">
               CÓDIGO
               <svg
@@ -34,8 +39,8 @@ export function Hero() {
                   strokeLinecap="round"
                 />
               </svg>
-            </span>{' '}
-            do seu WhatsApp!
+            </span>
+            <span className="hero__title-line">do seu WhatsApp!</span>
           </h1>
 
           <p className="hero__description">
@@ -55,13 +60,15 @@ export function Hero() {
         </div>
 
         <div
-          className="hero-illustration"
+          className="hero-stage"
           role="region"
           aria-label="Ilustração mostrando como o golpe acontece no celular"
         >
-          <div className="caller-row">
-            <div className="caller-badge">
-              <div className="caller-badge__icon" aria-hidden="true">
+          <div className="hero-stage__blob" aria-hidden="true" />
+
+          <div className="hero-stage__caller">
+            <div className="caller-pill">
+              <span className="caller-pill__icon" aria-hidden="true">
                 <svg
                   width="18"
                   height="18"
@@ -74,8 +81,8 @@ export function Hero() {
                     fill="currentColor"
                   />
                 </svg>
-              </div>
-              <span className="caller-badge__label">Número desconhecido</span>
+              </span>
+              <span className="caller-pill__label">Número desconhecido</span>
             </div>
 
             <div className="speech-bubble">
@@ -83,25 +90,36 @@ export function Hero() {
             </div>
           </div>
 
-          <div className="phone-mockup">
-            <div className="phone-mockup__speaker" aria-hidden="true" />
-            <div className="phone-mockup__screen">
-              <div className="sms-card">
-                <div className="sms-card__header">
-                  <span>Mensagem SMS</span>
-                  <span>Agora</span>
+          <div className="phone-portrait">
+            <div className="phone-portrait__notch" aria-hidden="true">
+              <span className="phone-portrait__speaker" />
+            </div>
+
+            <div className="phone-portrait__screen">
+              <div className="phone-portrait__time" aria-hidden="true">
+                14:32
+              </div>
+
+              <div className="sms-notification">
+                <div className="sms-notification__header">
+                  <span>SMS · Agora</span>
                 </div>
-                <p className="sms-card__body">
+                <p className="sms-notification__body">
                   Seu código do WhatsApp:{' '}
-                  <span className="sms-card__code">482-719</span>. Não
-                  compartilhe este código.
+                  <strong className="sms-notification__code">482-719</strong>.
+                  Não compartilhe este código.
                 </p>
               </div>
             </div>
-          </div>
 
-          <div className="stamp-alert" aria-label="Carimbo de alerta: NÃO PASSE!">
-            NÃO PASSE!
+            <div className="phone-portrait__homebar" aria-hidden="true" />
+
+            <div
+              className="stamp-alert"
+              aria-label="Carimbo de alerta: NÃO PASSE!"
+            >
+              NÃO PASSE!
+            </div>
           </div>
         </div>
       </div>
