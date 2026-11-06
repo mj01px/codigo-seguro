@@ -24,7 +24,7 @@ const STEPS = [
 
 export function HowItWorks() {
   return (
-    <Section id="como-funciona" tone="dots" className="section--bordered-top" aria-labelledby="como-funciona-title">
+    <Section id="como-funciona" tone="dots" aria-labelledby="como-funciona-title">
       <SectionHead id="como-funciona-title" eyebrow="Fique de olho:" title="Como o golpe acontece" underline>
         Do telefonema ao Pix, em poucos minutos.
       </SectionHead>
