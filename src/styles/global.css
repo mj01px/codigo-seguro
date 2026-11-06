@@ -1273,6 +1273,11 @@ ol {
   color: #1F2430;
 }
 
+.sim-sms__code {
+  white-space: nowrap;
+  font-weight: 700;
+}
+
 .sim-chat {
   flex: 1;
   display: flex;
