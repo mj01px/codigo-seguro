@@ -1,96 +1,69 @@
-import { useState } from 'react';
 import { Button } from '../components/Button';
+import { CheckIcon } from '../components/Icons';
 import { Section } from '../components/Section';
+import { SectionHead } from '../components/SectionHead';
+import { useCopy } from '../hooks/useCopy';
 
 const FAMILY_ITEMS = [
-  {
-    title: 'Converse sem dar bronca.',
-    description:
-      'Ninguém é bobo por cair em golpe. Os golpistas são profissionais.',
-  },
-  {
-    title: 'Ativem juntos o PIN.',
-    description: 'Sente do lado e façam o passo a passo deste site.',
-  },
-  {
-    title: 'Combinem uma regra da família.',
-    description:
-      '"Pediu dinheiro por mensagem? Antes de pagar, uma ligação."',
-  },
-  {
-    title: 'Deixe claro: na dúvida, me liga.',
-    description: 'Melhor uma ligação a mais do que um Pix a menos.',
-  },
+  { title: 'Converse sem dar bronca.', text: 'Ninguém é bobo por cair em golpe.' },
+  { title: 'Ativem juntos a senha do WhatsApp.', text: 'Sente do lado e façam o passo a passo.' },
+  { title: 'Deixe claro: na dúvida, me liga.', text: 'Melhor uma ligação a mais do que um Pix a menos.' },
 ];
 
 export function Family() {
-  const [copiedLink, setCopiedLink] = useState(false);
+  const { copied, copy } = useCopy();
 
   async function handleShare() {
-    const shareUrl = window.location.href;
-    const shareData = {
-      title: 'Código Seguro',
-      text: 'Aprenda a proteger seu WhatsApp contra o golpe do código por SMS.',
-      url: shareUrl,
-    };
+    const url = window.location.href.split('#')[0];
 
     if (typeof navigator.share === 'function') {
       try {
-        await navigator.share(shareData);
+        await navigator.share({
+          title: 'Código Seguro',
+          text: 'Aprenda a proteger seu WhatsApp contra o golpe do código por SMS.',
+          url,
+        });
         return;
       } catch (err) {
-        if (err instanceof Error && err.name === 'AbortError') {
-          return;
-        }
+        // Cancelar o compartilhamento não é erro. Outras falhas caem na cópia do link.
+        if (err instanceof Error && err.name === 'AbortError') return;
       }
     }
 
-    try {
-      await navigator.clipboard.writeText(shareUrl);
-      setCopiedLink(true);
-      window.setTimeout(() => setCopiedLink(false), 3000);
-    } catch {
-      const textarea = document.createElement('textarea');
-      textarea.value = shareUrl;
-      textarea.style.position = 'fixed';
-      textarea.style.opacity = '0';
-      document.body.appendChild(textarea);
-      textarea.select();
-      try {
-        document.execCommand('copy');
-        setCopiedLink(true);
-        window.setTimeout(() => setCopiedLink(false), 3000);
-      } finally {
-        document.body.removeChild(textarea);
-      }
-    }
+    await copy(url);
   }
 
   return (
-    <Section id="familia" tone="mint" aria-labelledby="familia-title">
-      <div className="section-header">
-        <h2 id="familia-title" className="section-title">
-          Proteja quem você ama
-        </h2>
-        <p className="section-subtitle">
-          Os mais velhos são os alvos preferidos. Uma conversa de 5 minutos
-          evita o golpe.
-        </p>
-      </div>
+    <Section id="familia" tone="navy" aria-labelledby="familia-title">
+      <div className="family">
+        <div className="family__text">
+          <SectionHead id="familia-title" eyebrow="Para a família:" eyebrowTone="mint" title="Proteja quem você ama">
+            Os mais velhos são os alvos preferidos. Uma conversa de 5 minutos evita o golpe.
+          </SectionHead>
+          <ul className="family__list">
+            {FAMILY_ITEMS.map((item) => (
+              <li key={item.title}>
+                <CheckIcon />
+                <span>
+                  <strong>{item.title}</strong> {item.text}
+                </span>
+              </li>
+            ))}
+          </ul>
+        </div>
 
-      <ul className="family-grid">
-        {FAMILY_ITEMS.map((item) => (
-          <li key={item.title} className="family-item">
-            <h3 className="family-item__title">{item.title}</h3>
-            <p className="family-item__text">{item.description}</p>
-          </li>
-        ))}
-      </ul>
-
-      <div className="family-cta">
-        <Button variant="primary" onClick={handleShare} aria-live="polite">
-          {copiedLink ? 'Link copiado!' : 'Compartilhar este site'}
-        </Button>
+        <figure className="family-rule">
+          <figcaption className="family-rule__label">A regra da família:</figcaption>
+          <blockquote>
+            <p className="family-rule__quote">Pediu dinheiro por mensagem? Antes de pagar, uma ligação.</p>
+          </blockquote>
+          <Button variant="navy" onClick={() => void handleShare()}>
+            {copied ? 'Link copiado!' : 'Compartilhar este site'}
+          </Button>
+          <span className="sr-only" role="status">
+            {copied ? 'Link copiado.' : ''}
+          </span>
+        </figure>
       </div>
     </Section>
   );
