@@ -38,6 +38,14 @@ export function Hero() {
               <Button variant="secondary" href="#proteger">
                 Proteger meu WhatsApp
               </Button>
+              <a className="hero__video-link" href="#video">
+                <span className="hero__video-play" aria-hidden="true">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M7 4.5v15l13-7.5z" />
+                  </svg>
+                </span>
+                Prefere assistir? Veja o vídeo
+              </a>
             </div>
           </div>
 

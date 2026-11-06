@@ -2,7 +2,7 @@ import { Button } from '../components/Button';
 import { CheckIcon } from '../components/Icons';
 import { Section } from '../components/Section';
 import { SectionHead } from '../components/SectionHead';
-import { useCopy } from '../hooks/useCopy';
+import { useShare } from '../hooks/useShare';
 
 const FAMILY_ITEMS = [
   { title: 'Converse sem dar bronca.', text: 'Ninguém é bobo por cair em golpe.' },
@@ -11,26 +11,13 @@ const FAMILY_ITEMS = [
 ];
 
 export function Family() {
-  const { copied, copy } = useCopy();
+  const { copied, share } = useShare();
 
-  async function handleShare() {
-    const url = window.location.href.split('#')[0];
-
-    if (typeof navigator.share === 'function') {
-      try {
-        await navigator.share({
-          title: 'Código Seguro',
-          text: 'Aprenda a proteger seu WhatsApp contra o golpe do código por SMS.',
-          url,
-        });
-        return;
-      } catch (err) {
-        // Cancelar o compartilhamento não é erro. Outras falhas caem na cópia do link.
-        if (err instanceof Error && err.name === 'AbortError') return;
-      }
-    }
-
-    await copy(url);
+  function handleShare() {
+    void share({
+      title: 'Código Seguro',
+      text: 'Aprenda a proteger seu WhatsApp contra o golpe do código por SMS.',
+    });
   }
 
   return (
@@ -57,7 +44,7 @@ export function Family() {
           <blockquote>
             <p className="family-rule__quote">Pediu dinheiro por mensagem? Antes de pagar, uma ligação.</p>
           </blockquote>
-          <Button variant="navy" onClick={() => void handleShare()}>
+          <Button variant="navy" onClick={handleShare}>
             {copied ? 'Link copiado!' : 'Compartilhar este site'}
           </Button>
           <span className="sr-only" role="status">

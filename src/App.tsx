@@ -1,6 +1,7 @@
 import { Header } from './components/Header';
 import { Footer } from './components/Footer';
 import { Hero } from './sections/Hero';
+import { Video } from './sections/Video';
 import { Simulator } from './sections/Simulator';
 import { HowItWorks } from './sections/HowItWorks';
 import { Warnings } from './sections/Warnings';
@@ -31,6 +32,7 @@ export function App() {
 
       <main id="conteudo-principal">
         <Hero />
+        <Video />
         <HowItWorks />
         <Simulator />
         <Warnings />
