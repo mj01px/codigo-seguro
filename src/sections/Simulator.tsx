@@ -231,7 +231,7 @@ export function Simulator() {
                     </span>
                     <strong className="sim-sms__sender">WhatsApp</strong>
                     <span className="sim-sms__text">
-                      Seu código do WhatsApp: 482-719. Não compartilhe este código.
+                      Seu código do WhatsApp: <span className="sim-sms__code">482-719</span>. Não compartilhe este código.
                     </span>
                   </span>
                 </div>
