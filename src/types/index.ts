@@ -1,4 +1,4 @@
-export type ButtonVariant = 'primary' | 'secondary' | 'control';
+export type ButtonVariant = 'primary' | 'secondary' | 'navy';
 
 export interface AccessibilityControlsProps {
   isLargeText: boolean;
@@ -27,8 +27,18 @@ export interface SimulatorStep {
   options: SimulatorOption[];
 }
 
+export type ChatAuthor = 'scammer' | 'user' | 'system';
+
+export interface ChatMessage {
+  id: string;
+  author: ChatAuthor;
+  text: string;
+}
+
 export interface SimulatorOutcome {
   type: SimulatorOutcomeType;
+  /** Última mensagem da conversa antes do resultado aparecer. */
+  closingMessage: Omit<ChatMessage, 'id'>;
   title: string;
   description: string;
   ctaLabel: string;
