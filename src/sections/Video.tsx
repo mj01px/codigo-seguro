@@ -53,7 +53,7 @@ export function Video() {
       : `https://www.youtube-nocookie.com/embed/${VIDEO.youtubeId}?autoplay=1&rel=0&cc_load_policy=1&cc_lang_pref=pt&hl=pt-BR&start=${startAt}`;
 
   return (
-    <Section id="video" tone="dots" className="section--after-highlights" aria-labelledby="video-title">
+    <Section id="video" tone="plain" className="section--after-highlights" aria-labelledby="video-title">
       <SectionHead id="video-title" eyebrow="Prefere assistir?" title="O golpe em 3 minutos" underline>
         O Pablo quase caiu no golpe. Veja como ele percebeu a tempo e como trancar o WhatsApp, passo a passo, na
         tela do celular.
