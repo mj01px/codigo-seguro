@@ -1,214 +1,309 @@
-import { useState, useEffect } from 'react';
+import { useRef, useState } from 'react';
+import type { KeyboardEvent, ReactNode } from 'react';
+import { CheckIcon, LockIcon } from '../components/Icons';
+import { PhoneFrame } from '../components/PhoneFrame';
 import { Section } from '../components/Section';
 import type { DevicePlatform } from '../types';
 
-const STORAGE_KEY_ANDROID = 'codigo-seguro:checklist-android';
-const STORAGE_KEY_IPHONE = 'codigo-seguro:checklist-iphone';
-
-const ANDROID_STEPS = [
-  'Abra o WhatsApp.',
-  'Toque nos três pontinhos, no canto de cima à direita.',
-  'Toque em "Configurações".',
-  'Toque em "Conta".',
-  'Toque em "Confirmação em duas etapas" e depois em "Ativar".',
-  'Crie um PIN de 6 números e digite de novo para confirmar.',
-  'Cadastre um e-mail. Ele serve para recuperar o PIN se você esquecer.',
+const PLATFORMS: { id: DevicePlatform; label: string }[] = [
+  { id: 'android', label: 'Android' },
+  { id: 'iphone', label: 'iPhone' },
 ];
 
-const IPHONE_STEPS = [
-  'Abra o WhatsApp.',
-  'Toque em "Configurações", no canto de baixo à direita.',
-  'Toque em "Conta".',
-  'Toque em "Confirmação em duas etapas".',
-  'Toque em "Ativar".',
-  'Crie um PIN de 6 números e digite de novo para confirmar.',
-  'Cadastre um e-mail. Ele serve para recuperar o PIN se você esquecer.',
-];
-
-function loadSavedChecks(key: string, length: number): boolean[] {
-  try {
-    const raw = window.localStorage.getItem(key);
-    if (!raw) return Array(length).fill(false);
-    const parsed = JSON.parse(raw);
-    if (Array.isArray(parsed) && parsed.length === length) {
-      return parsed.map(Boolean);
-    }
-  } catch {
-    // ignora caso localStorage falhe
-  }
-  return Array(length).fill(false);
+function Chevron() {
+  return (
+    <svg className="mini__chev" width="10" height="10" viewBox="0 0 24 24" fill="none">
+      <path d="M9 5l7 7-7 7" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  );
 }
+
+function BackHeader({ title }: { title: string }) {
+  return (
+    <span className="mini__header">
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="none">
+        <path d="M15 5l-7 7 7 7" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
+      </svg>
+      {title}
+    </span>
+  );
+}
+
+/** Linhas cinzas que imitam a lista de conversas ao fundo. */
+function ChatGhosts({ count }: { count: number }) {
+  return (
+    <span className="mini__ghosts">
+      {Array.from({ length: count }, (_, i) => (
+        <span key={i} className="mini__ghost">
+          <span className="mini__ghost-avatar" />
+          <span className="mini__ghost-lines">
+            <span />
+            <span />
+          </span>
+        </span>
+      ))}
+    </span>
+  );
+}
+
+function ListScreen({
+  title,
+  items,
+  active,
+  back = false,
+  profile = false,
+}: {
+  title: string;
+  items: string[];
+  active: string;
+  back?: boolean;
+  profile?: boolean;
+}) {
+  return (
+    <>
+      {back ? <BackHeader title={title} /> : <span className="mini__header">{title}</span>}
+      {profile && (
+        <span className="mini__profile">
+          <span className="mini__ghost-avatar mini__ghost-avatar--big" />
+          <span className="mini__ghost-lines">
+            <span />
+            <span />
+          </span>
+        </span>
+      )}
+      <span className="mini__list">
+        {items.map((item) => (
+          <span key={item} className={`mini__row ${item === active ? 'mini__row--active' : ''}`}>
+            <span>{item}</span>
+            <Chevron />
+          </span>
+        ))}
+      </span>
+    </>
+  );
+}
+
+function AndroidMenuScreen() {
+  return (
+    <>
+      <span className="mini__header mini__header--app">
+        WhatsApp
+        <span className="mini__dots">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="#1C2541">
+            <circle cx="12" cy="5" r="2.2" />
+            <circle cx="12" cy="12" r="2.2" />
+            <circle cx="12" cy="19" r="2.2" />
+          </svg>
+        </span>
+      </span>
+      <ChatGhosts count={5} />
+      <span className="mini__menu">
+        <span className="mini__menu-item">Novo grupo</span>
+        <span className="mini__menu-item">Mensagens favoritas</span>
+        <span className="mini__menu-item mini__menu-item--active">Configurações</span>
+      </span>
+    </>
+  );
+}
+
+function IphoneTabScreen() {
+  return (
+    <>
+      <span className="mini__header mini__header--app">Conversas</span>
+      <ChatGhosts count={4} />
+      <span className="mini__tabbar">
+        <span className="mini__tab">
+          <span className="mini__tab-icon" />
+          Ligações
+        </span>
+        <span className="mini__tab">
+          <span className="mini__tab-icon" />
+          Conversas
+        </span>
+        <span className="mini__tab mini__tab--active">
+          <span className="mini__tab-icon mini__tab-icon--avatar" />
+          Você
+        </span>
+      </span>
+    </>
+  );
+}
+
+function PasswordScreen() {
+  return (
+    <>
+      <BackHeader title="Duas etapas" />
+      <span className="mini__form">
+        <span className="mini__form-title">Crie uma senha</span>
+        <span className="mini__field">••••••••</span>
+        <span className="mini__hint">8 ou mais, com letra e número</span>
+        <span className="mini__button">Avançar</span>
+      </span>
+    </>
+  );
+}
+
+function accountStep(title: string): { screen: ReactNode; caption: ReactNode } {
+  return {
+    screen: (
+      <ListScreen
+        title={title}
+        items={['Conta', 'Privacidade', 'Conversas', 'Notificações']}
+        active="Conta"
+        profile
+      />
+    ),
+    caption: (
+      <>
+        Toque em <strong>Conta</strong>.
+      </>
+    ),
+  };
+}
+
+const LAST_STEPS: { screen: ReactNode; caption: ReactNode }[] = [
+  {
+    screen: (
+      <ListScreen
+        title="Conta"
+        items={['Verificação em duas etapas', 'Alterar número', 'Solicitar dados', 'Apagar conta']}
+        active="Verificação em duas etapas"
+        back
+      />
+    ),
+    caption: (
+      <>
+        Toque em <strong>Verificação em duas etapas</strong> e em <strong>Ativar</strong>. Em
+        alguns celulares o nome é <strong>Confirmação em duas etapas</strong>.
+      </>
+    ),
+  },
+  {
+    screen: <PasswordScreen />,
+    caption: (
+      <>
+        Crie uma <strong>senha</strong> (ou um PIN de 6 números, se o celular pedir) e cadastre um
+        e-mail.
+      </>
+    ),
+  },
+];
+
+const STEPS: Record<DevicePlatform, { screen: ReactNode; caption: ReactNode }[]> = {
+  android: [
+    {
+      screen: <AndroidMenuScreen />,
+      caption: (
+        <>
+          Toque nos três pontinhos e em <strong>Configurações</strong>.
+        </>
+      ),
+    },
+    accountStep('Configurações'),
+    ...LAST_STEPS,
+  ],
+  iphone: [
+    {
+      screen: <IphoneTabScreen />,
+      caption: (
+        <>
+          Toque em <strong>Você</strong> (a sua foto), embaixo à direita. Em alguns celulares
+          aparece <strong>Configurações</strong>.
+        </>
+      ),
+    },
+    accountStep('Você'),
+    ...LAST_STEPS,
+  ],
+};
 
 export function Protect() {
   const [platform, setPlatform] = useState<DevicePlatform>('android');
-  const [androidChecks, setAndroidChecks] = useState<boolean[]>(() =>
-    loadSavedChecks(STORAGE_KEY_ANDROID, ANDROID_STEPS.length)
-  );
-  const [iphoneChecks, setIphoneChecks] = useState<boolean[]>(() =>
-    loadSavedChecks(STORAGE_KEY_IPHONE, IPHONE_STEPS.length)
-  );
+  const tabRefs = useRef<Record<DevicePlatform, HTMLButtonElement | null>>({
+    android: null,
+    iphone: null,
+  });
 
-  useEffect(() => {
-    try {
-      window.localStorage.setItem(STORAGE_KEY_ANDROID, JSON.stringify(androidChecks));
-    } catch {
-      // ignora erro de localStorage
-    }
-  }, [androidChecks]);
-
-  useEffect(() => {
-    try {
-      window.localStorage.setItem(STORAGE_KEY_IPHONE, JSON.stringify(iphoneChecks));
-    } catch {
-      // ignora erro de localStorage
-    }
-  }, [iphoneChecks]);
-
-  const activeSteps = platform === 'android' ? ANDROID_STEPS : IPHONE_STEPS;
-  const activeChecks = platform === 'android' ? androidChecks : iphoneChecks;
-  const completedCount = activeChecks.filter(Boolean).length;
-  const totalCount = activeSteps.length;
-  const isAllDone = completedCount === totalCount;
-  const progressPercent = Math.round((completedCount / totalCount) * 100);
-
-  function toggleStep(index: number) {
-    if (platform === 'android') {
-      setAndroidChecks((prev) => prev.map((v, i) => (i === index ? !v : v)));
-    } else {
-      setIphoneChecks((prev) => prev.map((v, i) => (i === index ? !v : v)));
-    }
+  // Setas do teclado trocam de aba, como em qualquer lista de abas.
+  function handleTabKey(event: KeyboardEvent<HTMLButtonElement>) {
+    if (event.key !== 'ArrowLeft' && event.key !== 'ArrowRight') return;
+    event.preventDefault();
+    const next: DevicePlatform = platform === 'android' ? 'iphone' : 'android';
+    setPlatform(next);
+    tabRefs.current[next]?.focus();
   }
 
   return (
-    <Section id="proteger" tone="mint" aria-labelledby="proteger-title">
-      <div className="section-header">
-        <h2 id="proteger-title" className="section-title">
-          Tranque seu WhatsApp
-        </h2>
-        <p className="section-subtitle">
-          Ative a confirmação em duas etapas. Com ela, mesmo que alguém consiga
-          o código do SMS, não entra sem o seu{' '}
-          <mark className="mark-yellow">PIN</mark>. Leva 2 minutos.
+    <Section id="proteger" tone="dots" className="section--bordered-top" aria-labelledby="proteger-title">
+      <div className="card protect">
+        <div className="protect__head">
+          <span className="protect__icon">
+            <LockIcon size={28} color="#FFD447" />
+          </span>
+          <h2 id="proteger-title" className="section-title">
+            Tranque seu WhatsApp
+          </h2>
+        </div>
+        <p className="lead lead--ink">
+          Ative a verificação em duas etapas. Mesmo que alguém consiga o código do SMS, não entra
+          sem a sua senha.
         </p>
-      </div>
 
-      <div className="protect-layout">
-        <div className="protect-main">
-          <div
-            className="platform-tabs"
-            role="tablist"
-            aria-label="Escolha o tipo do seu celular"
-          >
+        <div className="tabs" role="tablist" aria-label="Escolha o tipo do seu celular">
+          {PLATFORMS.map((item) => (
             <button
+              key={item.id}
+              ref={(el) => {
+                tabRefs.current[item.id] = el;
+              }}
               type="button"
               role="tab"
-              id="tab-android"
-              aria-selected={platform === 'android'}
-              aria-controls="panel-checklist"
-              className={`btn platform-tab ${
-                platform === 'android' ? 'platform-tab--active' : ''
-              }`}
-              onClick={() => setPlatform('android')}
+              id={`tab-${item.id}`}
+              aria-selected={platform === item.id}
+              aria-controls="painel-passos"
+              tabIndex={platform === item.id ? 0 : -1}
+              className="tabs__tab"
+              onClick={() => setPlatform(item.id)}
+              onKeyDown={handleTabKey}
             >
-              Android
+              {item.label}
             </button>
-            <button
-              type="button"
-              role="tab"
-              id="tab-iphone"
-              aria-selected={platform === 'iphone'}
-              aria-controls="panel-checklist"
-              className={`btn platform-tab ${
-                platform === 'iphone' ? 'platform-tab--active' : ''
-              }`}
-              onClick={() => setPlatform('iphone')}
-            >
-              iPhone
-            </button>
-          </div>
-
-          <div
-            id="panel-checklist"
-            role="tabpanel"
-            aria-labelledby={platform === 'android' ? 'tab-android' : 'tab-iphone'}
-            className="checklist-panel"
-          >
-            <div className="checklist-progress" aria-live="polite">
-              <div className="checklist-progress__header">
-                <span className="checklist-progress__count">
-                  {completedCount} de {totalCount} passos feitos
-                </span>
-              </div>
-              <div
-                className="checklist-progress__bar"
-                role="progressbar"
-                aria-valuenow={completedCount}
-                aria-valuemin={0}
-                aria-valuemax={totalCount}
-                aria-label="Progresso dos passos concluídos"
-              >
-                <div
-                  className="checklist-progress__fill"
-                  style={{ width: `${progressPercent}%` }}
-                />
-              </div>
-            </div>
-
-            <ol className="checklist-items">
-              {activeSteps.map((stepText, idx) => {
-                const inputId = `step-${platform}-${idx + 1}`;
-                const checked = activeChecks[idx];
-                return (
-                  <li
-                    key={inputId}
-                    className={`checklist-item ${
-                      checked ? 'checklist-item--done' : ''
-                    }`}
-                  >
-                    <input
-                      type="checkbox"
-                      id={inputId}
-                      className="checklist-item__checkbox"
-                      checked={checked}
-                      onChange={() => toggleStep(idx)}
-                    />
-                    <label htmlFor={inputId} className="checklist-item__label">
-                      <span className="checklist-item__num">{idx + 1}.</span>{' '}
-                      <span>{stepText}</span>
-                    </label>
-                  </li>
-                );
-              })}
-            </ol>
-
-            {isAllDone && (
-              <div className="checklist-complete" role="status" aria-live="polite">
-                Pronto! Seu WhatsApp está trancado.
-              </div>
-            )}
-
-            <p className="checklist-note">
-              Os nomes dos menus podem mudar um pouco conforme a versão do
-              aplicativo.
-            </p>
-          </div>
+          ))}
         </div>
 
-        <aside className="pin-tips-card" aria-labelledby="pin-tips-title">
-          <h3 id="pin-tips-title" className="pin-tips-card__title">
-            Dicas para o seu PIN
-          </h3>
-          <ul className="pin-tips-card__list">
-            <li>Não use data de nascimento, 123456 ou 000000.</li>
+        <ol id="painel-passos" role="tabpanel" aria-labelledby={`tab-${platform}`} className="pin-steps">
+          {STEPS[platform].map((step, index) => (
+            <li key={`${platform}-${index}`} className="pin-steps__item">
+              <div className="pin-steps__phone" aria-hidden="true">
+                <PhoneFrame width={176} height={330} fullScreen>
+                  <span className="mini">{step.screen}</span>
+                </PhoneFrame>
+              </div>
+              <p className="pin-steps__caption">
+                <strong>{index + 1}.</strong> {step.caption}
+              </p>
+            </li>
+          ))}
+        </ol>
+
+        <div className="pin-tips">
+          <h3 className="pin-tips__title">Dicas da senha</h3>
+          <ul className="pin-tips__list">
             <li>
-              Não conte o PIN para ninguém, nem para quem diz ser do WhatsApp.
+              <CheckIcon color="#0E6B4B" />
+              Use 8 ou mais letras e números.
             </li>
             <li>
-              De vez em quando o WhatsApp pede o PIN. É só para você não
-              esquecer.
+              <CheckIcon color="#0E6B4B" />
+              Não use data de nascimento nem o seu nome.
+            </li>
+            <li>
+              <CheckIcon color="#0E6B4B" />
+              Não conte a senha para ninguém.
             </li>
           </ul>
-        </aside>
+          <p className="pin-tips__note">Os nomes dos menus podem mudar um pouco no seu celular.</p>
+        </div>
       </div>
     </Section>
   );
