@@ -1,16 +1,15 @@
 export function Footer() {
   return (
     <footer className="site-footer">
-      <div className="container site-footer__inner">
-        <p className="site-footer__meta">
-          Projeto acadêmico · Engenharia de Software · 8B Noturno · UMC · 2026
-        </p>
-        <p className="site-footer__authors">
-          Mauro Junior, Pablo de Souza, Matheus Henrique e Victor Teixeira
-        </p>
-        <p className="site-footer__privacy">
-          Este site não coleta nenhum dado seu.
-        </p>
+      <div className="container">
+        <div className="site-footer__inner">
+          <div className="site-footer__credits">
+            <strong>Engenharia de Software · 8B Noturno · 2026</strong>
+            <span>Mauro Junior e Pablo de Souza</span>
+            <span>Universidade de Mogi das Cruzes</span>
+          </div>
+          <p className="site-footer__privacy">Este site não coleta nenhum dado seu.</p>
+        </div>
       </div>
     </footer>
   );
