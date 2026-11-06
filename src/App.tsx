@@ -3,6 +3,7 @@ import { Footer } from './components/Footer';
 import { Hero } from './sections/Hero';
 import { Simulator } from './sections/Simulator';
 import { HowItWorks } from './sections/HowItWorks';
+import { Warnings } from './sections/Warnings';
 import { Protect } from './sections/Protect';
 import { AlreadyStolen } from './sections/AlreadyStolen';
 import { Family } from './sections/Family';
@@ -30,8 +31,9 @@ export function App() {
 
       <main id="conteudo-principal">
         <Hero />
-        <Simulator />
         <HowItWorks />
+        <Simulator />
+        <Warnings />
         <Protect />
         <AlreadyStolen />
         <Family />
