@@ -64,6 +64,10 @@ export const SIMULATOR_STEPS: Record<1 | 2 | 3, SimulatorStep> = {
 export const SIMULATOR_OUTCOMES: Record<SimulatorOutcomeType, SimulatorOutcome> = {
   lost: {
     type: 'lost',
+    closingMessage: {
+      author: 'scammer',
+      text: 'Obrigado! Seu prêmio já foi liberado.',
+    },
     title: 'O golpista entrou no seu WhatsApp.',
     description:
       'Com esse código, ele instala o seu WhatsApp no celular dele. Você fica sem acesso e ele começa a pedir Pix para a sua família, fingindo ser você. Mas calma: dá para recuperar.',
@@ -73,6 +77,10 @@ export const SIMULATOR_OUTCOMES: Record<SimulatorOutcomeType, SimulatorOutcome> 
   },
   won: {
     type: 'won',
+    closingMessage: {
+      author: 'system',
+      text: 'Você bloqueou este número.',
+    },
     title: 'Muito bem! Você protegeu o seu WhatsApp.',
     description:
       'Nenhuma loja, banco ou empresa precisa do código do seu WhatsApp. Quem pede é golpista. Agora, deixe a sua conta ainda mais segura.',
