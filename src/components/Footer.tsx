@@ -5,7 +5,7 @@ export function Footer() {
         <div className="site-footer__inner">
           <div className="site-footer__credits">
             <strong>Engenharia de Software · 8B Noturno · 2026</strong>
-            <span>Mauro Junior e Pablo de Souza</span>
+            <span>Mauro Junior, Pablo de Souza, Matheus Henrique e Victor Teixeira</span>
             <span>Universidade de Mogi das Cruzes</span>
           </div>
           <p className="site-footer__privacy">Este site não coleta nenhum dado seu.</p>

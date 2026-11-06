@@ -64,5 +64,5 @@ docs/             imagens deste README
 
 ## Quem fez
 
-**[Mauro Junior](https://github.com/mj01px)** e **Pablo de Souza**<br>
+**[Mauro Junior](https://github.com/mj01px)**, **Pablo de Souza**, **Matheus Henrique** e **Victor Teixeira**<br>
 Engenharia de Software, 8B Noturno · Universidade de Mogi das Cruzes · 2026
