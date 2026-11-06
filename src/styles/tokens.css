@@ -1,45 +1,36 @@
 :root {
-  /* Cores da identidade visual */
-  --color-navy: #1C2541;
-  --color-yellow: #FFD447;
-  --color-mint: #9EDFC3;
-  --color-mint-light: #D3F1E3;
-  --color-green-dark: #0E6B4B;
-  --color-wine: #A61E3A;
-  --color-wine-light: #FCE8EC;
-  --color-white: #FFFFFF;
-  --color-dot: #D5DBE6;
+  /* Cores do panfleto */
+  --navy: #1C2541;
+  --ink-soft: #3B4560;
+  --green: #0E6B4B;
+  --green-dark: #0B5239;
+  --yellow: #FFD447;
+  --yellow-soft: #FFF4CC;
+  --mint: #9EDFC3;
+  --mint-light: #D3F1E3;
+  --phone-screen: #E3F4EC;
+  --wine: #A61E3A;
+  --wine-soft: #FCE8EC;
+  --line: #C9D3CF;
+  --dot: #D5DBE6;
+  --white: #FFFFFF;
 
   /* Fontes */
-  --font-display: 'Permanent Marker', cursive;
   --font-body: 'Lexend', system-ui, -apple-system, sans-serif;
+  --font-marker: 'Permanent Marker', cursive;
 
-  /* Raios e bordas */
-  --radius-card: 12px;
-  --radius-pill: 999px;
-  --border-width: 2px;
-  --border-solid: var(--border-width) solid var(--color-navy);
-  --border-subtle: 1px solid rgba(28, 37, 65, 0.22);
+  /* Bordas e sombras duras, só nas peças de destaque */
+  --border: 2px solid var(--navy);
+  --shadow: 4px 4px 0 var(--navy);
+  --shadow-lg: 8px 8px 0 var(--navy);
 
-  /* Sombras duras (sem desfoque) */
-  --shadow-hard: 3px 3px 0 var(--color-navy);
-  --shadow-hard-lg: 5px 5px 0 var(--color-navy);
-  --shadow-hard-active: 1px 1px 0 var(--color-navy);
-
-  /* Escala tipográfica (mínimo 18px no corpo) */
+  /* A+ multiplica a base; todo o resto é em rem */
   --font-scale: 1;
-  --text-sm: calc(1rem * var(--font-scale));        /* 18px base */
-  --text-base: calc(1.11rem * var(--font-scale));   /* 20px */
-  --text-lg: calc(1.25rem * var(--font-scale));     /* 22.5px */
-  --text-xl: calc(1.5rem * var(--font-scale));      /* 27px */
-  --text-2xl: calc(2rem * var(--font-scale));       /* 36px */
-  --text-hero: clamp(2rem, 3.8vw, 3.1rem);
 
-  /* Espaçamento e layout */
-  --container-max: 1120px;
-  --header-height: 82px;
+  --container-max: 1160px;
+  --header-h: 92px;
 }
 
 html[data-large-text="true"] {
-  --font-scale: 1.16;
+  --font-scale: 1.15;
 }
