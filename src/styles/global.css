@@ -966,7 +966,8 @@ ol {
 
 .video__quote {
   position: absolute;
-  left: 7%;
+  /* fala do Pablo, no quadro da direita */
+  left: 57%;
   top: 9%;
   max-width: 34%;
   padding: 10px 14px;
@@ -977,19 +978,6 @@ ol {
   background-color: var(--yellow);
   border: var(--border);
   border-radius: 18px;
-}
-
-.video__badge {
-  position: absolute;
-  right: 4%;
-  top: 6%;
-  padding: 5px 10px;
-  font-size: 0.72rem;
-  font-weight: 800;
-  letter-spacing: 0.06em;
-  color: var(--white);
-  background-color: var(--wine);
-  border-radius: 8px;
 }
 
 .video__play,

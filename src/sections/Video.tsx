@@ -9,14 +9,13 @@ import { SectionHead } from '../components/SectionHead';
  * 3. opcional: salve um frame da chamada em public/video/capa.jpg e preencha `poster` com "video/capa.jpg".
  */
 const VIDEO = {
-  youtubeId: '',
+  youtubeId: 'RSO-bHS3svQ',
   poster: '',
-  duration: '3 min',
   chapters: [
     { start: 0, title: 'A ligação do golpe' },
-    { start: 50, title: 'Por que nunca passar o código' },
-    { start: 100, title: 'Ativando a verificação em duas etapas' },
-    { start: 160, title: 'Passe para a família' },
+    { start: 56, title: 'Por que nunca passar o código' },
+    { start: 209, title: 'Ativando a verificação em duas etapas' },
+    { start: 302, title: 'Passe para a família' },
   ],
 } as const;
 
@@ -38,7 +37,7 @@ export function Video() {
   // null = capa; número = o player carregado a partir desse segundo
   const [startAt, setStartAt] = useState<number | null>(null);
   const [activeChapter, setActiveChapter] = useState(0);
-  const isReady = VIDEO.youtubeId !== '';
+  const isReady = VIDEO.youtubeId.length > 0;
 
   function play(chapterIndex: number) {
     if (!isReady) return;
@@ -54,7 +53,7 @@ export function Video() {
 
   return (
     <Section id="video" tone="plain" className="section--after-highlights" aria-labelledby="video-title">
-      <SectionHead id="video-title" eyebrow="Prefere assistir?" title="O golpe em 3 minutos" underline>
+      <SectionHead id="video-title" eyebrow="Prefere assistir?" title="O golpe em 6 minutos" underline>
         O Pablo quase caiu no golpe. Veja como ele percebeu a tempo e como trancar o WhatsApp, passo a passo, na
         tela do celular.
       </SectionHead>
@@ -67,7 +66,7 @@ export function Video() {
                 key={startAt}
                 className="video__iframe"
                 src={embedSrc}
-                title="Vídeo: o golpe do código do WhatsApp em 3 minutos"
+                title="Vídeo: o golpe do código do WhatsApp em 6 minutos"
                 allow="autoplay; encrypted-media; picture-in-picture; fullscreen"
                 allowFullScreen
                 referrerPolicy="strict-origin-when-cross-origin"
@@ -84,21 +83,18 @@ export function Video() {
                   <img className="video__poster" src={`${import.meta.env.BASE_URL}${VIDEO.poster}`} alt="" />
                 ) : (
                   <span className="video__call" aria-hidden="true">
-                    <span className="video__tile video__tile--mint">
-                      <span className="video__avatar video__avatar--green">P</span>
-                      <span className="video__name">Pablo</span>
-                    </span>
                     <span className="video__tile video__tile--yellow">
                       <span className="video__avatar">M</span>
                       <span className="video__name">Mauro</span>
+                    </span>
+                    <span className="video__tile video__tile--mint">
+                      <span className="video__avatar video__avatar--green">P</span>
+                      <span className="video__name">Pablo</span>
                     </span>
                   </span>
                 )}
                 <span className="video__quote" aria-hidden="true">
                   “Mauro, aconteceu uma situação aqui. Me ajuda?”
-                </span>
-                <span className="video__badge" aria-hidden="true">
-                  VÍDEO · {VIDEO.duration.toUpperCase()}
                 </span>
                 {isReady ? (
                   <span className="video__play" aria-hidden="true">
