@@ -1,28 +1,29 @@
 import type { SimulatorStep, SimulatorOutcome, SimulatorOutcomeType } from '../types';
 
+export const SIMULATOR_CONTACT = 'Loja Bom Preço';
+
 export const SIMULATOR_STEPS: Record<1 | 2 | 3, SimulatorStep> = {
   1: {
     stepNumber: 1,
     scammerMessage:
-      'Olá! Aqui é da Loja Casa Bela. Seu número foi sorteado e você ganhou um vale-compras de R$ 500!',
+      'Oi! Aqui é da Loja Bom Preço. Você ganhou um brinde na nossa promoção! Só falta confirmar o seu cadastro.',
     options: [
       {
         id: '1-a',
-        label: 'Que legal! O que eu preciso fazer?',
+        label: 'Que legal! Como eu confirmo?',
         next: 2,
       },
       {
         id: '1-b',
-        label: 'Eu não participei de nenhum sorteio.',
+        label: 'Eu não pedi brinde nenhum.',
         next: 2,
-        tip: 'Boa desconfiança! Prêmio que você não pediu é um sinal de alerta.',
       },
     ],
   },
   2: {
     stepNumber: 2,
     scammerMessage:
-      'Para liberar o prêmio, mandamos um código de 6 números por SMS. Me fala qual chegou?',
+      'Mandei um código por SMS para confirmar o cadastro. Pode me falar o código que chegou aí?',
     showSmsNotification: true,
     smsText: 'Seu código do WhatsApp: 482-719. Não compartilhe este código.',
     options: [
@@ -45,7 +46,7 @@ export const SIMULATOR_STEPS: Record<1 | 2 | 3, SimulatorStep> = {
   },
   3: {
     stepNumber: 3,
-    scammerMessage: 'Rápido! O código vence em 2 minutos e você perde o prêmio!',
+    scammerMessage: 'Rapidinho, por favor, o código vence em 2 minutos!',
     options: [
       {
         id: '3-a',
@@ -66,13 +67,18 @@ export const SIMULATOR_OUTCOMES: Record<SimulatorOutcomeType, SimulatorOutcome> 
     type: 'lost',
     closingMessage: {
       author: 'scammer',
-      text: 'Obrigado! Seu prêmio já foi liberado.',
+      text: 'Obrigado! Seu brinde já foi liberado.',
     },
+    stamp: 'CAIU!',
     title: 'O golpista entrou no seu WhatsApp.',
     description:
-      'Com esse código, ele instala o seu WhatsApp no celular dele. Você fica sem acesso e ele começa a pedir Pix para a sua família, fingindo ser você. Mas calma: dá para recuperar.',
+      'Com esse código, ele coloca o seu WhatsApp no celular dele e começa a pedir dinheiro para a sua família, fingindo ser você.',
+    notes: [
+      { label: 'Calma:', text: 'dá para recuperar. O passo a passo está logo abaixo.' },
+      { label: 'Lembre:', text: 'o próprio SMS diz “Não compartilhe este código”.' },
+    ],
     ctaLabel: 'Ver o que fazer agora',
-    ctaHref: '#ja-roubaram',
+    ctaHref: '#agora',
     retryLabel: 'Tentar de novo',
   },
   won: {
@@ -81,11 +87,15 @@ export const SIMULATOR_OUTCOMES: Record<SimulatorOutcomeType, SimulatorOutcome> 
       author: 'system',
       text: 'Você bloqueou este número.',
     },
-    title: 'Muito bem! Você protegeu o seu WhatsApp.',
-    description:
-      'Nenhuma loja, banco ou empresa precisa do código do seu WhatsApp. Quem pede é golpista. Agora, deixe a sua conta ainda mais segura.',
+    stamp: 'BOA!',
+    title: 'Nada acontece: o código expira sozinho.',
+    description: 'Loja, banco ou empresa nenhuma precisa do código do seu WhatsApp. Quem pede é golpista.',
+    notes: [
+      { label: 'Sinais que você percebeu:', text: 'pedido do código, pressa, você não pediu nada.' },
+      { label: 'Lembre:', text: 'o próprio SMS diz “Não compartilhe este código”.' },
+    ],
     ctaLabel: 'Trancar meu WhatsApp',
-    ctaHref: '#proteger',
+    ctaHref: '#conta',
     retryLabel: 'Tentar de novo',
   },
 };

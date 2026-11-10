@@ -1,5 +1,3 @@
-export type ButtonVariant = 'primary' | 'secondary' | 'navy';
-
 export interface AccessibilityControlsProps {
   isLargeText: boolean;
   onToggleLargeText: () => void;
@@ -39,8 +37,12 @@ export interface SimulatorOutcome {
   type: SimulatorOutcomeType;
   /** Última mensagem da conversa antes do resultado aparecer. */
   closingMessage: Omit<ChatMessage, 'id'>;
+  /** Carimbo escrito à mão no topo do resultado. */
+  stamp: string;
   title: string;
   description: string;
+  /** Lembretes curtos com um rótulo em negrito. */
+  notes: { label: string; text: string }[];
   ctaLabel: string;
   ctaHref: string;
   retryLabel: string;
