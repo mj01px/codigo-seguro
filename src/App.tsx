@@ -1,14 +1,15 @@
+import { A11yDock } from './components/A11yDock';
 import { Header } from './components/Header';
 import { Footer } from './components/Footer';
 import { Hero } from './sections/Hero';
-import { Video } from './sections/Video';
+import { Understand } from './sections/Understand';
+import { Prevent } from './sections/Prevent';
+import { Disguises } from './sections/Disguises';
 import { Simulator } from './sections/Simulator';
-import { HowItWorks } from './sections/HowItWorks';
-import { Warnings } from './sections/Warnings';
-import { Protect } from './sections/Protect';
-import { AlreadyStolen } from './sections/AlreadyStolen';
+import { Lock } from './sections/Lock';
+import { AfterCode } from './sections/AfterCode';
+import { Video } from './sections/Video';
 import { Family } from './sections/Family';
-import { Pamphlet } from './sections/Pamphlet';
 import { useFontSize } from './hooks/useFontSize';
 import { useReadAloud } from './hooks/useReadAloud';
 
@@ -22,27 +23,28 @@ export function App() {
         Pular para o conteúdo principal
       </a>
 
-      <Header
+      <Header />
+
+      <main id="conteudo-principal">
+        <Hero />
+        <Understand />
+        <Prevent />
+        <Disguises />
+        <Simulator />
+        <Lock />
+        <AfterCode />
+        <Video />
+        <Family />
+      </main>
+
+      <Footer />
+      <A11yDock
         isLargeText={isLargeText}
         onToggleLargeText={toggleLargeText}
         isSpeechSupported={isSpeechSupported}
         isSpeaking={isSpeaking}
         onToggleReadAloud={toggleReadAloud}
       />
-
-      <main id="conteudo-principal">
-        <Hero />
-        <Video />
-        <HowItWorks />
-        <Simulator />
-        <Warnings />
-        <Protect />
-        <AlreadyStolen />
-        <Family />
-        <Pamphlet />
-      </main>
-
-      <Footer />
     </>
   );
 }
