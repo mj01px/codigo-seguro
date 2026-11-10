@@ -9,7 +9,7 @@ import { SectionHead } from '../components/SectionHead';
  * 3. opcional: salve um frame da chamada em public/video/capa.jpg e preencha `poster` com "video/capa.jpg".
  */
 const VIDEO = {
-  youtubeId: 'RSO-bHS3svQ',
+  youtubeId: '',
   poster: '',
   chapters: [
     { start: 0, title: 'A ligação do golpe' },
