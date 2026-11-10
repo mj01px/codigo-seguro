@@ -14,6 +14,14 @@
   --line: #C9D3CF;
   --dot: #D5DBE6;
   --white: #FFFFFF;
+  --paper: #FBF8F1;
+  --navy-2: #26305A;
+  --ink-body: #2E3550;
+  --ink-muted: #5B6170;
+  --green-text: #E6F1EB;
+  --pink: #F6A5B3;
+  --line-warm: #CFC7B3;
+  --focus: #2F6FED;
 
   /* Fontes */
   --font-body: 'Lexend', system-ui, -apple-system, sans-serif;
@@ -21,14 +29,15 @@
 
   /* Bordas e sombras duras, só nas peças de destaque */
   --border: 2px solid var(--navy);
+  --border-3: 3px solid var(--navy);
   --shadow: 4px 4px 0 var(--navy);
   --shadow-lg: 8px 8px 0 var(--navy);
 
   /* A+ multiplica a base; todo o resto é em rem */
   --font-scale: 1;
 
-  --container-max: 1160px;
-  --header-h: 92px;
+  --container-max: 1280px;
+  --header-h: 76px;
 }
 
 html[data-large-text="true"] {
