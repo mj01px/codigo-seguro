@@ -729,7 +729,9 @@ export class Page extends Component {
 
       <div style={{ display: "flex", flexWrap: "wrap", gap: "24px", alignItems: "stretch" }}>
       <div style={{ flex: "999 1 560px", minWidth: "0" }}>
-      <div style={{ position: "relative", aspectRatio: "16 / 9", borderRadius: "24px", overflow: "hidden", background: "#0F1530", border: "1px solid rgba(255,255,255,.12)" }}>
+      <div style={{ position: "relative", aspectRatio: "16 / 9", borderRadius: "24px", overflow: "hidden", background: "#0F1530", boxShadow: "10px 10px 0 #FFD447" }}>
+      {/* A borda fica por cima do player e cobre a faixa escura que o YouTube deixa nas bordas. */}
+      <span aria-hidden="true" style={{ position: "absolute", inset: "0", zIndex: "3", border: "5px solid #FFFFFF", borderRadius: "24px", pointerEvents: "none" }}></span>
       {(videoPlaying) && (<>
       <iframe
         key={activeStart}
