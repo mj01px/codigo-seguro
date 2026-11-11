@@ -514,6 +514,107 @@ export class Page extends Component {
       </div>
       </section>
 
+      <section id="treine" data-readable="true" aria-labelledby="treine-title" style={{ padding: "0 clamp(12px, 2vw, 24px) clamp(72px, 9vw, 120px)" }}>
+      <div style={{ maxWidth: "1392px", margin: "0 auto", background: "#FFD447", border: "3px solid #1C2541", borderRadius: "clamp(24px, 3vw, 36px)", padding: "clamp(56px, 7vw, 96px) clamp(16px, 4vw, 40px)" }}>
+      <div style={{ maxWidth: "1160px", margin: "0 auto", display: "flex", flexDirection: "column", gap: "48px" }}>
+      <div style={{ display: "flex", flexDirection: "column", gap: "16px", alignItems: "center", textAlign: "center" }}>
+      <div style={{ display: "flex", alignItems: "flex-end", gap: "24px", textAlign: "left" }}><Cadu mood="alerta" size={76} /><p style={{ position: "relative", marginBottom: "26px", display: "inline-flex", alignItems: "center", gap: "10px", padding: "8px 16px 8px 10px", borderRadius: "18px", background: "#FFFFFF", border: "3px solid #1C2541", fontFamily: "'Permanent Marker', cursive", fontSize: "20px", lineHeight: "1.2", color: "#1C2541" }}><span style={{ fontFamily: "'JetBrains Mono', monospace", fontWeight: "700", fontSize: "13px", padding: "4px 8px", borderRadius: "8px", background: "#1C2541", color: "#FFD447" }}>03</span>agora é com você:<svg aria-hidden="true" width="27" height="20" viewBox="0 0 27 20" style={{ position: "absolute", left: "-21px", bottom: "0", overflow: "visible" }}><path d="M27 3 L19 3 L2 18 L19 13 L27 13 Z" style={{ fill: "#FFFFFF" }}></path><path d="M19.5 3 L2 18 L19.5 13" style={{ fill: "none", stroke: "#1C2541", strokeWidth: "3", strokeLinejoin: "round", strokeLinecap: "round" }}></path></svg></p></div>
+      <h2 id="treine-title" style={{ fontFamily: "'Lexend', sans-serif", fontWeight: "800", fontSize: "clamp(36px, 4.6vw, 60px)", lineHeight: "1.02", letterSpacing: "-0.035em" }}>Você cairia nesse golpe?</h2>
+      <p style={{ maxWidth: "32em", fontSize: "18px", color: "#2E3550" }}>Escolha o que responder. É só uma simulação: nada aqui é real e nada é enviado.</p>
+      </div>
+
+      <div style={{ display: "flex", flexWrap: "wrap", gap: "40px 56px", alignItems: "flex-start", justifyContent: "center" }}>
+      <div style={{ flex: "0 1 340px", display: "flex", justifyContent: "center", padding: "8px 10px" }}>
+      <div style={{ position: "relative", width: "312px", maxWidth: "100%", height: "620px", borderRadius: "54px", background: "#1C2541", padding: "14px", transform: "rotate(-2deg)" }}>
+      <span aria-hidden="true" style={{ position: "absolute", left: "-8px", top: "150px", width: "10px", height: "48px", borderRadius: "5px 0 0 5px", background: "#1C2541" }}></span>
+      <span aria-hidden="true" style={{ position: "absolute", left: "-8px", top: "212px", width: "10px", height: "64px", borderRadius: "5px 0 0 5px", background: "#1C2541" }}></span>
+      <span aria-hidden="true" style={{ position: "absolute", right: "-8px", top: "180px", width: "10px", height: "92px", borderRadius: "0 5px 5px 0", background: "#1C2541" }}></span>
+      <div style={{ position: "relative", width: "100%", height: "100%", borderRadius: "40px", overflow: "hidden", background: "#F1EFEA", display: "flex", flexDirection: "column" }}>
+      <span aria-hidden="true" style={{ position: "absolute", top: "12px", left: "50%", marginLeft: "-46px", width: "92px", height: "26px", borderRadius: "999px", background: "#1C2541", zIndex: "3" }}></span>
+      <div style={{ flexShrink: "0", display: "flex", alignItems: "center", gap: "10px", padding: "50px 16px 12px", background: "#FFFFFF", borderBottom: "3px solid #1C2541" }}>
+      <span aria-hidden="true" style={{ width: "40px", height: "40px", flexShrink: "0", borderRadius: "50%", background: "#D3F1E3", border: "2.5px solid #1C2541", display: "flex", alignItems: "center", justifyContent: "center", color: "#1C2541" }}><svg className="ic" width="20" height="20" viewBox="0 0 24 24"><circle cx="12" cy="8.5" r="4"></circle><path d="M4.5 20.5c1.2-3.8 4-5.5 7.5-5.5s6.3 1.7 7.5 5.5"></path></svg></span>
+      <span style={{ display: "flex", flexDirection: "column", lineHeight: "1.2" }}><strong style={{ fontSize: "16px", fontWeight: "800" }}>Entregas Bom Caminho</strong><span style={{ fontSize: "12.5px", fontWeight: "700", color: "#A61E3A" }}>número desconhecido</span></span>
+      </div>
+      {(showSms) && (<>
+      <div role="note" aria-label="Notificação de SMS recebida" className="cs-msg" style={{ position: "absolute", top: "46px", left: "10px", right: "10px", zIndex: "2", display: "flex", gap: "10px", padding: "11px 12px", borderRadius: "16px", background: "#FFFFFF", boxShadow: "4px 4px 0 #1C2541", border: "2.5px solid #1C2541" }}>
+      <span aria-hidden="true" style={{ width: "28px", height: "28px", flexShrink: "0", borderRadius: "8px", background: "#0E6B4B", display: "flex", alignItems: "center", justifyContent: "center" }}><svg width="14" height="14" viewBox="0 0 24 24" style={{ fill: "#FFFFFF" }}><path d="M4 4h16a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1H9l-5 4V5a1 1 0 0 1 1-1z"></path></svg></span>
+      <span style={{ display: "flex", flexDirection: "column", fontSize: "12px", lineHeight: "1.35" }}>
+      <span style={{ display: "flex", justifyContent: "space-between", color: "#5B6170", fontSize: "11px" }}><span>Mensagens</span><span>agora</span></span>
+      <strong>WhatsApp</strong>
+      <span>Seu código do WhatsApp: <span style={{ fontFamily: "'JetBrains Mono', monospace", fontWeight: "700", background: "#FFD447", padding: "0 3px", borderRadius: "3px" }}>482-719</span>. Não compartilhe este código.</span>
+      </span>
+      </div>
+      </>)}
+      <div ref={chatRef} role="log" aria-live="polite" aria-label="Conversa simulada" style={css(chatStyle)}>
+      {(msgs).map((m, i3) => (<Fragment key={i3}>
+      {(m.isScammer) && (<>
+      <p className="cs-msg" style={{ alignSelf: "flex-start", maxWidth: "84%", padding: "10px 13px", borderRadius: "14px", background: "#FFFFFF", border: "2px solid #1C2541", fontSize: "14px", lineHeight: "1.45" }}><span style={{ position: "absolute", left: "-9999px" }}>Golpista: </span>{m.text}</p>
+      </>)}
+      {(m.isUser) && (<>
+      <p className="cs-msg" style={{ alignSelf: "flex-end", maxWidth: "84%", padding: "10px 13px", borderRadius: "14px", background: "#D3F1E3", border: "2px solid #1C2541", fontSize: "14px", lineHeight: "1.45" }}><span style={{ position: "absolute", left: "-9999px" }}>Você: </span>{m.text}</p>
+      </>)}
+      {(m.isSystem) && (<>
+      <p className="cs-msg" style={{ alignSelf: "center", padding: "6px 12px", borderRadius: "999px", background: "#FFF4CC", border: "2px solid #1C2541", fontSize: "12px", fontWeight: "700", color: "#1C2541" }}>{m.text}</p>
+      </>)}
+      </Fragment>))}
+      {(typing) && (<>
+      <p aria-label="digitando" style={{ alignSelf: "flex-start", display: "flex", gap: "4px", padding: "13px 14px", borderRadius: "14px", background: "#FFFFFF", border: "2px solid #1C2541" }}><span className="cs-dot" style={{ width: "7px", height: "7px", borderRadius: "50%", background: "#5B6170" }}></span><span className="cs-dot" style={{ width: "7px", height: "7px", borderRadius: "50%", background: "#5B6170" }}></span><span className="cs-dot" style={{ width: "7px", height: "7px", borderRadius: "50%", background: "#5B6170" }}></span></p>
+      </>)}
+      </div>
+      <span aria-hidden="true" style={{ position: "absolute", bottom: "10px", left: "50%", marginLeft: "-55px", width: "110px", height: "6px", borderRadius: "999px", background: "#1C2541" }}></span>
+      </div>
+      </div>
+      </div>
+
+      <div style={{ flex: "1 1 400px", maxWidth: "560px", minWidth: "0", display: "flex", flexDirection: "column", gap: "16px", marginTop: "clamp(0px, 6vw, 88px)", marginLeft: "clamp(0px, 3vw, 44px)" }}>
+      <div style={{ background: "#FFFFFF", borderRadius: "28px", padding: "clamp(22px, 3vw, 32px)", display: "flex", flexDirection: "column", gap: "20px", border: "3px solid #1C2541", boxShadow: "8px 8px 0 #1C2541" }}>
+      <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
+      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", gap: "12px" }}>
+      <p style={{ fontFamily: "'Lexend', sans-serif", fontWeight: "800", fontSize: "24px", letterSpacing: "-0.02em" }}>{question}</p>
+      <p style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: "13px", color: "#4A5270", whiteSpace: "nowrap" }}>{progress}</p>
+      </div>
+      <div aria-hidden="true" style={{ display: "flex", alignItems: "center", marginTop: "4px" }}>
+      {(stepDots).map((sd, i4) => (<Fragment key={i4}><span style={css(sd.lineStyle)}></span><span style={css(sd.style)}>{sd.n}</span></Fragment>))}
+      </div>
+      </div>
+      {(noResult) && (<>
+      <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
+      {(options).map((o, i5) => (<Fragment key={i5}>
+      <button type="button" className="cs-opt" onClick={o.pick} disabled={typing} style={{ display: "flex", alignItems: "center", gap: "14px", width: "100%", minHeight: "64px", padding: "12px 18px 12px 12px", borderRadius: "20px", border: "3px solid #1C2541", background: "#FFFFFF", boxShadow: "4px 4px 0 #1C2541", textAlign: "left", fontSize: "17px", fontWeight: "600", lineHeight: "1.35", color: "#1C2541" }}><span aria-hidden="true" style={css(o.letterStyle)}>{o.letter}</span><span>{o.label}</span></button>
+      </Fragment>))}
+      </div>
+      </>)}
+      {(hasResult) && (<>
+      <div className="cs-msg" style={{ display: "flex", flexDirection: "column", gap: "14px" }}>
+      <div style={css(res.bannerStyle)}>
+      {(isLost) && (<><Cadu mood="assustado" size={84} /></>)}
+      {(isWon) && (<><Cadu mood="trancado" size={84} /></>)}
+      <div style={{ display: "flex", flexDirection: "column", alignItems: "flex-start", gap: "10px", minWidth: "0" }}>
+      <span aria-hidden="true" style={css(res.stampStyle)}>{res.stamp}</span>
+      <p style={{ fontFamily: "'Lexend', sans-serif", fontWeight: "800", fontSize: "22px", lineHeight: "1.15", letterSpacing: "-0.02em", color: "#1C2541" }}>{res.title}</p>
+      </div>
+      </div>
+      <p style={{ fontSize: "17px", lineHeight: "1.5", color: "#2E3550", padding: "0 4px" }}>{res.description}</p>
+      {(isLost) && (<>
+      <div style={css(res.notesStyle)}>
+      {(res.notes).map((nt, i6) => (<Fragment key={i6}>
+      <p style={{ fontSize: "15px", lineHeight: "1.5" }}><b>{nt.label}</b> {nt.text}</p>
+      </Fragment>))}
+      </div>
+      </>)}
+      <div style={{ display: "flex", flexWrap: "wrap", gap: "10px" }}>
+      <a href={res.ctaHref} className="cs-btn" style={{ display: "inline-flex", alignItems: "center", gap: "8px", minHeight: "50px", padding: "0 22px", borderRadius: "999px", border: "3px solid #1C2541", background: "#1C2541", color: "#FFFFFF", boxShadow: "4px 4px 0 #FFD447", fontWeight: "700", fontSize: "15px", textDecoration: "none" }}>{res.ctaLabel}<svg className="ic" width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" style={{ strokeWidth: "3" }}><path d="m9 6 6 6-6 6"></path></svg></a>
+      <button type="button" className="cs-btn" onClick={reset} style={{ display: "inline-flex", alignItems: "center", gap: "8px", minHeight: "50px", padding: "0 20px", borderRadius: "999px", border: "3px solid #1C2541", background: "#FFFFFF", boxShadow: "4px 4px 0 #1C2541", fontWeight: "700", fontSize: "15px" }}><svg className="ic" width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" style={{ strokeWidth: "2.4" }}><path d="M4 12a8 8 0 1 0 2.5-5.8"></path><path d="M4 3v4h4"></path></svg>Tentar de novo</button>
+      </div>
+      </div>
+      </>)}
+      </div>
+      <p style={{ display: "flex", alignItems: "center", gap: "8px", fontSize: "14px", color: "#4A5270", paddingLeft: "8px" }}><svg className="ic" width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" style={{ color: "#0E6B4B" }}><path d="M12 3l7 3v5c0 4.5-3 8-7 10-4-2-7-5.5-7-10V6z"></path></svg>Nada que você escolher aqui sai desta página.</p>
+      </div>
+      </div>
+      </div>
+      </div>
+      </section>
 
 
 
