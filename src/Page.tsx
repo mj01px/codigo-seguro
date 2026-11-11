@@ -397,6 +397,68 @@ export class Page extends Component {
       </div>
       </div>
 
+      <section id="entenda" data-readable="true" aria-labelledby="entenda-title" style={{ padding: "clamp(72px, 9vw, 128px) 0 clamp(64px, 8vw, 112px)" }}>
+      <div style={{ maxWidth: "1240px", margin: "0 auto", padding: "0 clamp(16px, 4vw, 40px)", display: "flex", flexDirection: "column", gap: "clamp(56px, 7vw, 96px)" }}>
+
+      <div style={{ display: "flex", flexWrap: "wrap", alignItems: "flex-end", gap: "8px 22px" }}>
+      <span aria-hidden="true" style={{ fontFamily: "'Lexend', sans-serif", fontWeight: "800", fontSize: "clamp(96px, 12vw, 136px)", lineHeight: ".75", letterSpacing: "-0.04em", color: "#0E6B4B" }}>1</span>
+      <div style={{ display: "flex", flexDirection: "column", gap: "8px", minWidth: "0" }}>
+      <p style={{ fontFamily: "'Permanent Marker', cursive", fontSize: "25px", lineHeight: "1", color: "#0E6B4B" }}>Entenda:</p>
+      <h2 id="entenda-title" style={{ fontFamily: "'Lexend', sans-serif", fontWeight: "800", fontSize: "clamp(36px, 4.6vw, 58px)", lineHeight: "1", letterSpacing: "-0.035em" }}>Esse código é a <span style={{ background: "linear-gradient(transparent 58%, #FFD447 58%, #FFD447 92%, transparent 92%)", padding: "0 4px" }}>chave da sua conta.</span></h2>
+      </div>
+      </div>
+
+      <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 380px), 1fr))", gap: "28px 56px", marginTop: "clamp(-40px, -3vw, -16px)" }}>
+      <p style={{ fontSize: "20px", lineHeight: "1.6", color: "#2E3550", paddingLeft: "22px", borderLeft: "5px solid #FFD447" }}>Quando alguém coloca um WhatsApp num celular novo, o WhatsApp manda um código de 6 números por SMS para o dono do número. É como ele pergunta: <b>“é você mesmo?”</b></p>
+      <p style={{ fontSize: "20px", lineHeight: "1.6", color: "#2E3550", paddingLeft: "22px", borderLeft: "5px solid #A61E3A" }}>Quem digita o código fica com a conta. Se você passa para o golpista, <b>ele coloca o seu WhatsApp no celular dele</b>.</p>
+      </div>
+
+      <div style={{ display: "flex", flexDirection: "column", gap: "24px" }}>
+      <div style={{ display: "flex", alignItems: "center", gap: "14px" }}><Cadu mood="assustado" size={64} /><p style={{ fontFamily: "'Lexend', sans-serif", fontWeight: "800", fontSize: "clamp(26px, 3vw, 36px)", letterSpacing: "-0.03em", lineHeight: "1.1" }}>Com a sua conta, <span style={{ color: "#A61E3A" }}>o golpista:</span></p></div>
+      <ol style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 260px), 1fr))", gap: "40px", marginTop: "16px" }}>
+      <li style={{ display: "flex", flexDirection: "column", gap: "12px" }}>
+      <span aria-hidden="true" style={{ position: "relative", width: "150px", height: "150px", marginBottom: "6px", borderRadius: "50%", background: "#3DBE7E", border: "3px solid #1C2541", boxShadow: "6px 6px 0 #1C2541", color: "#1C2541", display: "flex", alignItems: "center", justifyContent: "center" }}><svg className="ic" width="70" height="70" style={{ strokeWidth: "2.2" }} viewBox="0 0 24 24"><path d="M4 5h16a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H9l-5 4V6a1 1 0 0 1 1-1z"></path><path d="M8 9.5h8"></path><path d="M8 12.5h5"></path></svg><span style={{ position: "absolute", left: "-6px", top: "-6px", width: "44px", height: "44px", borderRadius: "50%", background: "#1C2541", color: "#FBF8F1", display: "flex", alignItems: "center", justifyContent: "center", fontWeight: "800", fontSize: "20px" }}>a</span></span>
+      <h3 style={{ fontWeight: "800", fontSize: "23px", lineHeight: "1.2", letterSpacing: "-0.02em" }}>Lê suas conversas e vê seus contatos.</h3>
+      </li>
+      <li style={{ display: "flex", flexDirection: "column", gap: "12px" }}>
+      <span aria-hidden="true" style={{ position: "relative", width: "150px", height: "150px", marginBottom: "6px", borderRadius: "50%", background: "#FFD447", border: "3px solid #1C2541", boxShadow: "6px 6px 0 #1C2541", color: "#1C2541", display: "flex", alignItems: "center", justifyContent: "center" }}><svg className="ic" width="70" height="70" style={{ strokeWidth: "2.2" }} viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="12" rx="2"></rect><circle cx="12" cy="12" r="2.5"></circle><path d="M6.5 9.5v5"></path><path d="M17.5 9.5v5"></path></svg><span style={{ position: "absolute", left: "-6px", top: "-6px", width: "44px", height: "44px", borderRadius: "50%", background: "#1C2541", color: "#FBF8F1", display: "flex", alignItems: "center", justifyContent: "center", fontWeight: "800", fontSize: "20px" }}>b</span></span>
+      <h3 style={{ fontWeight: "800", fontSize: "23px", lineHeight: "1.2", letterSpacing: "-0.02em" }}>Pede dinheiro para a sua família em seu nome.</h3>
+      <p style={{ fontSize: "17px", color: "#2E3550" }}>É o objetivo dele.</p>
+      </li>
+      <li style={{ display: "flex", flexDirection: "column", gap: "12px" }}>
+      <span aria-hidden="true" style={{ position: "relative", width: "150px", height: "150px", marginBottom: "6px", borderRadius: "50%", background: "#F0566B", border: "3px solid #1C2541", boxShadow: "6px 6px 0 #1C2541", color: "#1C2541", display: "flex", alignItems: "center", justifyContent: "center" }}><svg className="ic" width="70" height="70" style={{ strokeWidth: "2.2" }} viewBox="0 0 24 24"><rect x="5" y="11" width="14" height="10" rx="2.5"></rect><path d="M8 11V8a4 4 0 0 1 8 0v3"></path><path d="M9.5 16h.01"></path><path d="M12 16h.01"></path><path d="M14.5 16h.01"></path></svg><span style={{ position: "absolute", left: "-6px", top: "-6px", width: "44px", height: "44px", borderRadius: "50%", background: "#A61E3A", color: "#FFFFFF", display: "flex", alignItems: "center", justifyContent: "center", fontWeight: "800", fontSize: "20px" }}>c</span></span>
+      <h3 style={{ fontWeight: "800", fontSize: "23px", lineHeight: "1.2", letterSpacing: "-0.02em" }}>Cria uma senha para você não conseguir voltar.</h3>
+      </li>
+      </ol>
+      </div>
+
+      <div style={{ display: "flex", flexWrap: "wrap", alignItems: "center", gap: "48px 64px" }}>
+      <div style={{ flex: "1 1 520px", minWidth: "0", display: "flex", flexDirection: "column", gap: "14px", padding: "clamp(24px, 3vw, 32px)", background: "#FFFFFF", border: "3px solid #1C2541", borderRadius: "30px", boxShadow: "8px 8px 0 #1C2541" }}>
+      <div style={{ display: "flex", flexDirection: "column", gap: "4px", marginBottom: "8px" }}>
+      <p style={{ fontFamily: "'Permanent Marker', cursive", fontSize: "25px", lineHeight: "1", color: "#0E6B4B" }}>Por que</p>
+      <h3 style={{ fontWeight: "800", fontSize: "clamp(28px, 3vw, 34px)", lineHeight: "1", letterSpacing: "-0.03em" }}><span style={{ background: "linear-gradient(transparent 58%, #9EDFC3 58%, #9EDFC3 92%, transparent 92%)", padding: "0 4px" }}>qualquer pessoa</span> pode cair</h3>
+      </div>
+      <div style={{ display: "flex", gap: "16px", alignItems: "flex-start", padding: "16px 18px", borderRadius: "18px", background: "#F5EFE6" }}>
+      <span aria-hidden="true" style={{ width: "34px", height: "34px", flexShrink: "0", borderRadius: "50%", background: "#FFD447", border: "2px solid #1C2541", display: "flex", alignItems: "center", justifyContent: "center", fontWeight: "800", fontSize: "15px" }}>1</span>
+      <p style={{ fontSize: "17px", lineHeight: "1.45" }}><b>Parece nada.</b> “É só um número.” O pedido parece pequeno e inofensivo.</p>
+      </div>
+      <div style={{ display: "flex", gap: "16px", alignItems: "flex-start", padding: "16px 18px", borderRadius: "18px", background: "#F5EFE6" }}>
+      <span aria-hidden="true" style={{ width: "34px", height: "34px", flexShrink: "0", borderRadius: "50%", background: "#9EDFC3", border: "2px solid #1C2541", display: "flex", alignItems: "center", justifyContent: "center", fontWeight: "800", fontSize: "15px" }}>2</span>
+      <p style={{ fontSize: "17px", lineHeight: "1.45" }}><b>Tem pressa.</b> “O código vence em 2 minutos.” A pressa é para você não pensar.</p>
+      </div>
+      <div style={{ display: "flex", gap: "16px", alignItems: "flex-start", padding: "16px 18px", borderRadius: "18px", background: "#F5EFE6" }}>
+      <span aria-hidden="true" style={{ width: "34px", height: "34px", flexShrink: "0", borderRadius: "50%", background: "#FFFFFF", border: "2px solid #1C2541", display: "flex", alignItems: "center", justifyContent: "center", fontWeight: "800", fontSize: "15px" }}>3</span>
+      <p style={{ fontSize: "17px", lineHeight: "1.45" }}><b>Sabem de você.</b> Seu nome, onde você comprou, o anúncio que você publicou.</p>
+      </div>
+      </div>
+      <div aria-hidden="true" style={{ flex: "0 1 320px", margin: "0 auto", display: "flex", flexDirection: "column", alignItems: "center", gap: "22px" }}>
+      <p style={{ position: "relative", transform: "rotate(-3deg)", padding: "12px 22px 13px", borderRadius: "22px", background: "#FFFFFF", border: "3px solid #1C2541", fontFamily: "'Permanent Marker', cursive", fontSize: "clamp(22px, 2.4vw, 28px)", lineHeight: "1.1", textAlign: "center", color: "#1C2541" }}>Pediu o código?<br />Desconfia!<svg width="24" height="18" viewBox="0 0 24 18" style={{ position: "absolute", top: "100%", left: "50%", margin: "-3px 0 0 -12px", overflow: "visible" }}><path d="M2 -2 L2 0 L12 16 L22 0 L22 -2 Z" style={{ fill: "#FFFFFF" }}></path><path d="M2 0 L12 16 L22 0" style={{ fill: "none", stroke: "#1C2541", strokeWidth: "3", strokeLinejoin: "round" }}></path></svg></p>
+      <div style={{ transform: "rotate(-8deg)" }}><Cadu mood="alerta" size={200} /></div>
+      </div>
+      </div>
+
+      </div>
+      </section>
 
 
 
