@@ -768,6 +768,83 @@ export class Page extends Component {
       </div>
       </section>
 
+      <section id="agora" data-readable="true" aria-labelledby="agora-title" style={{ background: "#FBF8F1", padding: "clamp(24px, 4vw, 56px) 0 clamp(72px, 9vw, 120px)" }}>
+      <div style={{ maxWidth: "1040px", margin: "0 auto", padding: "0 clamp(16px, 4vw, 40px)", display: "flex", flexDirection: "column", gap: "40px" }}>
+      <div style={{ display: "flex", flexDirection: "column", gap: "18px" }}>
+      <div style={{ display: "flex", alignItems: "flex-end", gap: "24px" }}><Cadu mood="assustado" size={88} /><p style={{ position: "relative", marginBottom: "30px", padding: "10px 18px", borderRadius: "20px", background: "#FFFFFF", border: "3px solid #A61E3A", color: "#A61E3A", fontFamily: "'Permanent Marker', cursive", fontSize: "22px", lineHeight: "1.2" }}>Calma, dá para resolver!<svg aria-hidden="true" width="27" height="20" viewBox="0 0 27 20" style={{ position: "absolute", left: "-21px", bottom: "0", overflow: "visible" }}><path d="M27 3 L19 3 L2 18 L19 13 L27 13 Z" style={{ fill: "#FFFFFF" }}></path><path d="M19.5 3 L2 18 L19.5 13" style={{ fill: "none", stroke: "#A61E3A", strokeWidth: "3", strokeLinejoin: "round", strokeLinecap: "round" }}></path></svg></p></div>
+      <h2 id="agora-title" style={{ fontFamily: "'Lexend', sans-serif", fontWeight: "800", fontSize: "clamp(38px, 5vw, 64px)", lineHeight: "1", letterSpacing: "-0.04em" }}>Passei o código. E agora?</h2>
+      <p style={{ maxWidth: "36em", fontSize: "18px", color: "#2E3550" }}><b>Seu WhatsApp ainda funciona?</b> Então corra e <a href="#conta" style={{ color: "#A61E3A", fontWeight: "600" }}>crie agora a senha extra</a>. Com ela, o código sozinho não serve para nada. <b>Se já perdeu o acesso</b>, siga os passos abaixo.</p>
+      </div>
+
+      <div style={{ background: "#FFFFFF", border: "3px solid #A61E3A", boxShadow: "8px 8px 0 #A61E3A", borderRadius: "32px", overflow: "hidden", display: "flex", flexDirection: "column" }}>
+      <div style={{ display: "flex", flexWrap: "wrap", justifyContent: "space-between", alignItems: "baseline", gap: "8px 24px", padding: "24px clamp(20px, 4vw, 48px)", background: "#A61E3A", color: "#FFFFFF" }}>
+      <h3 style={{ fontFamily: "'Lexend', sans-serif", fontWeight: "800", fontSize: "clamp(22px, 2.6vw, 30px)", letterSpacing: "-0.025em" }}>Perdeu o WhatsApp? Faça isto, nesta ordem.</h3>
+      <p style={{ fontSize: "15px", color: "#FFE3E9" }}>Toque nas perguntas amarelas se for o seu caso.</p>
+      </div>
+      <ol style={{ display: "flex", flexDirection: "column", padding: "clamp(24px, 4vw, 44px) clamp(20px, 4vw, 48px)" }}>
+
+      <li style={{ display: "flex", gap: "clamp(14px, 2.4vw, 24px)" }}>
+      <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}><span aria-hidden="true" style={{ width: "44px", height: "44px", flexShrink: "0", borderRadius: "50%", background: "#A61E3A", color: "#FFFFFF", display: "flex", alignItems: "center", justifyContent: "center", fontFamily: "'JetBrains Mono', monospace", fontWeight: "700", fontSize: "18px" }}>1</span><span style={{ flex: "1", width: "2px", background: "#F1D3DA", margin: "6px 0" }}></span></div>
+      <div style={{ flex: "1", minWidth: "0", paddingBottom: "36px", display: "flex", flexDirection: "column", gap: "12px", paddingTop: "8px" }}>
+      <h4 style={{ fontFamily: "'Lexend', sans-serif", fontWeight: "800", fontSize: "22px", letterSpacing: "-0.02em" }}>Avise a família e os amigos</h4>
+      <p style={{ color: "#2E3550" }}>Ligue ou mande por outro aplicativo: “Roubaram meu WhatsApp. Não façam nenhum Pix.”</p>
+      <div style={{ borderRadius: "18px", background: "#FFF4CC", overflow: "hidden" }}>
+      <button type="button" onClick={toggleQ1} aria-expanded={q1Open} style={{ width: "100%", minHeight: "56px", display: "flex", alignItems: "center", justifyContent: "space-between", gap: "12px", padding: "14px 18px", border: "0", background: "transparent", textAlign: "left", fontWeight: "600", fontSize: "16px" }}><span>Alguém já fez Pix para o golpista?</span><svg className="ic" width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" style={{ strokeWidth: "2.6", transition: "transform .2s ease", transform: `rotate(${q1Rot})` }}><path d="M6 9l6 6 6-6"></path></svg></button>
+      {(q1Open) && (<>
+      <div style={{ padding: "0 18px 18px", display: "flex", flexDirection: "column", gap: "14px", fontSize: "16px" }}>
+      <p>Quem fez o Pix deve <b>ligar agora para o próprio banco</b> (o número fica atrás do cartão), dizer que foi golpe e <b>pedir o MED</b>.</p>
+      <div style={{ background: "#FFFFFF", borderRadius: "14px", padding: "18px", display: "flex", flexDirection: "column", gap: "10px" }}>
+      <p style={{ fontSize: "12px", fontWeight: "700", letterSpacing: ".12em", color: "#0E6B4B" }}>O QUE É O MED?</p>
+      <p>É o <b>Mecanismo Especial de Devolução</b> do Pix. Funciona assim: o seu banco avisa o banco do golpista, que <b>bloqueia o dinheiro</b> se ele ainda estiver na conta e analisa o caso em até 7 dias. Se for golpe, o valor volta para você.</p>
+      <p>Dá para pedir até <b>80 dias</b> depois do Pix, mas <b>quanto antes, maior a chance</b>: o golpista costuma passar o dinheiro adiante rápido.</p>
+      </div>
+      </div>
+      </>)}
+      </div>
+      </div>
+      </li>
+
+      <li style={{ display: "flex", gap: "clamp(14px, 2.4vw, 24px)" }}>
+      <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}><span aria-hidden="true" style={{ width: "44px", height: "44px", flexShrink: "0", borderRadius: "50%", background: "#A61E3A", color: "#FFFFFF", display: "flex", alignItems: "center", justifyContent: "center", fontFamily: "'JetBrains Mono', monospace", fontWeight: "700", fontSize: "18px" }}>2</span><span style={{ flex: "1", width: "2px", background: "#F1D3DA", margin: "6px 0" }}></span></div>
+      <div style={{ flex: "1", minWidth: "0", paddingBottom: "36px", display: "flex", flexDirection: "column", gap: "12px", paddingTop: "8px" }}>
+      <h4 style={{ fontFamily: "'Lexend', sans-serif", fontWeight: "800", fontSize: "22px", letterSpacing: "-0.02em" }}>Entre de novo no seu WhatsApp</h4>
+      <p style={{ color: "#2E3550" }}>Abra o aplicativo, toque em <b>Acessar conta novamente</b> e digite o código que chegar por SMS. Isso tira o golpista da sua conta.</p>
+      <div style={{ borderRadius: "18px", background: "#FFF4CC", overflow: "hidden" }}>
+      <button type="button" onClick={toggleQ2} aria-expanded={q2Open} style={{ width: "100%", minHeight: "56px", display: "flex", alignItems: "center", justifyContent: "space-between", gap: "12px", padding: "14px 18px", border: "0", background: "transparent", textAlign: "left", fontWeight: "600", fontSize: "16px" }}><span>Pediu uma senha que você não criou?</span><svg className="ic" width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" style={{ strokeWidth: "2.6", transition: "transform .2s ease", transform: `rotate(${q2Rot})` }}><path d="M6 9l6 6 6-6"></path></svg></button>
+      {(q2Open) && (<>
+      <div style={{ padding: "0 18px 18px", display: "flex", flexDirection: "column", gap: "14px", fontSize: "16px" }}>
+      <p>O golpista criou uma senha na sua conta. <b>Não precisa abrir chamado nem mandar e-mail: é só esperar.</b></p>
+      <ol style={{ display: "flex", flexDirection: "column", gap: "10px", background: "#FFFFFF", borderRadius: "14px", padding: "18px" }}>
+      <li style={{ display: "flex", gap: "10px" }}><b style={{ fontFamily: "'JetBrains Mono', monospace", color: "#0E6B4B" }}>1.</b><span>Na tela da senha, toque em <b>Esqueceu a senha?</b> (ou <b>Esqueceu o PIN?</b>) e confirme.</span></li>
+      <li style={{ display: "flex", gap: "10px" }}><b style={{ fontFamily: "'JetBrains Mono', monospace", color: "#0E6B4B" }}>2.</b><span>Espere <b>7 dias</b> com o WhatsApp instalado e o chip no celular. O golpista já está fora e não consegue voltar.</span></li>
+      <li style={{ display: "flex", gap: "10px" }}><b style={{ fontFamily: "'JetBrains Mono', monospace", color: "#0E6B4B" }}>3.</b><span>Depois, peça um <b>novo código por SMS</b> e entre. A conta é sua de novo.</span></li>
+      </ol>
+      </div>
+      </>)}
+      </div>
+      </div>
+      </li>
+
+      <li style={{ display: "flex", gap: "clamp(14px, 2.4vw, 24px)" }}>
+      <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}><span aria-hidden="true" style={{ width: "44px", height: "44px", flexShrink: "0", borderRadius: "50%", background: "#A61E3A", color: "#FFFFFF", display: "flex", alignItems: "center", justifyContent: "center", fontFamily: "'JetBrains Mono', monospace", fontWeight: "700", fontSize: "18px" }}>3</span><span style={{ flex: "1", width: "2px", background: "#F1D3DA", margin: "6px 0" }}></span></div>
+      <div style={{ flex: "1", minWidth: "0", paddingBottom: "36px", display: "flex", flexDirection: "column", gap: "12px", paddingTop: "8px" }}>
+      <h4 style={{ fontFamily: "'Lexend', sans-serif", fontWeight: "800", fontSize: "22px", letterSpacing: "-0.02em" }}>Registre o boletim de ocorrência</h4>
+      <p style={{ color: "#2E3550" }}>Pela internet, na <b>Delegacia Eletrônica</b> do seu estado (<a href="https://www.delegaciaeletronica.policiacivil.sp.gov.br/" target="_blank" rel="noopener noreferrer" style={{ color: "#A61E3A", fontWeight: "600" }}>a de São Paulo fica aqui</a>). Guarde prints da conversa e o número do golpista.</p>
+      </div>
+      </li>
+
+      <li style={{ display: "flex", gap: "clamp(14px, 2.4vw, 24px)" }}>
+      <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}><span aria-hidden="true" style={{ width: "44px", height: "44px", flexShrink: "0", borderRadius: "50%", background: "#0E6B4B", color: "#FFFFFF", display: "flex", alignItems: "center", justifyContent: "center", fontFamily: "'JetBrains Mono', monospace", fontWeight: "700", fontSize: "18px" }}>4</span></div>
+      <div style={{ flex: "1", minWidth: "0", display: "flex", flexDirection: "column", gap: "12px", paddingTop: "8px" }}>
+      <h4 style={{ fontFamily: "'Lexend', sans-serif", fontWeight: "800", fontSize: "22px", letterSpacing: "-0.02em" }}>Tranque a conta de volta</h4>
+      <p style={{ color: "#2E3550" }}>Ative a <b>verificação em duas etapas</b> para isso não acontecer de novo. <a href="#conta" style={{ color: "#0E6B4B", fontWeight: "600" }}>O que é isso?</a></p>
+      </div>
+      </li>
+
+      </ol>
+      </div>
+      </div>
+      </section>
 
 
 
