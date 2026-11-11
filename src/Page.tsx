@@ -460,7 +460,59 @@ export class Page extends Component {
       </div>
       </section>
 
+      <section id="previna" data-readable="true" aria-labelledby="previna-title" style={{ padding: "0 clamp(12px, 2vw, 24px)" }}>
+      <div style={{ maxWidth: "1392px", margin: "0 auto", background: "#1C2541", color: "#FFFFFF", borderRadius: "clamp(24px, 3vw, 36px)", padding: "clamp(56px, 7vw, 96px) clamp(20px, 5vw, 76px)", display: "flex", flexDirection: "column", gap: "clamp(48px, 6vw, 72px)" }}>
+      <div style={{ display: "flex", flexDirection: "column", gap: "22px", maxWidth: "980px" }}>
+      <p style={{ display: "inline-flex", alignItems: "center", gap: "12px", fontSize: "13px", fontWeight: "600", letterSpacing: ".12em", textTransform: "uppercase", color: "#D3F1E3" }}><span style={{ fontFamily: "'JetBrains Mono', monospace", fontWeight: "700", letterSpacing: "0", padding: "4px 9px", borderRadius: "8px", background: "#FFD447", color: "#1C2541" }}>02</span>Previna</p>
+      <div style={{ display: "flex", alignItems: "center", gap: "16px" }}><h2 id="previna-title" style={{ fontFamily: "'Permanent Marker', cursive", fontWeight: "400", fontSize: "clamp(22px, 2.4vw, 30px)", color: "#9EDFC3" }}>A regra que resolve quase tudo:</h2></div>
+      <p style={{ fontFamily: "'Permanent Marker', cursive", fontSize: "clamp(40px, 6vw, 84px)", lineHeight: "1.05", color: "#FFD447", textTransform: "uppercase" }}>O código do SMS é só seu. Pediu, é golpe. <span style={{ color: "#FFFFFF" }}>Seja quem for.</span></p>
+      </div>
+      <div style={{ display: "flex", flexDirection: "column", gap: "24px" }}>
+      <h3 style={{ fontFamily: "'Lexend', sans-serif", fontWeight: "800", fontSize: "clamp(26px, 3vw, 36px)", letterSpacing: "-0.03em", lineHeight: "1.1" }}>Os <span style={{ color: "#FFD447" }}>5 sinais</span> do golpe do código</h3>
+      <ol style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 200px), 1fr))", gap: "16px", color: "#1C2541" }}>
+      <li style={{ background: "#FFD447", borderRadius: "24px", padding: "20px 20px 24px", display: "flex", flexDirection: "column", gap: "12px", transform: "rotate(-1.2deg)", boxShadow: "6px 6px 0 rgba(0,0,0,.28)" }}>
+      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}><span aria-hidden="true" style={{ fontFamily: "'Lexend', sans-serif", fontWeight: "800", fontSize: "46px", lineHeight: "1", letterSpacing: "-0.04em" }}>1</span><span aria-hidden="true" style={{ width: "52px", height: "52px", borderRadius: "50%", background: "#FFFFFF", border: "3px solid #1C2541", display: "flex", alignItems: "center", justifyContent: "center" }}><svg className="ic" width="26" height="26" viewBox="0 0 24 24" style={{ strokeWidth: "2.2" }}><rect x="5" y="2.5" width="14" height="19" rx="3"></rect><path d="M9 9h.01M12 9h.01M15 9h.01M9 12.5h.01M12 12.5h.01M15 12.5h.01M12 16h.01" style={{ strokeWidth: "3" }}></path></svg></span></div>
+      <p style={{ fontSize: "17px", lineHeight: "1.4" }}><b style={{ display: "block", fontSize: "20px", lineHeight: "1.2", marginBottom: "4px" }}>Pedem um código</b>que chegou por SMS. Já basta.</p>
+      </li>
+      <li style={{ background: "#3DBE7E", borderRadius: "24px", padding: "20px 20px 24px", display: "flex", flexDirection: "column", gap: "12px", transform: "rotate(1deg)", boxShadow: "6px 6px 0 rgba(0,0,0,.28)" }}>
+      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}><span aria-hidden="true" style={{ fontFamily: "'Lexend', sans-serif", fontWeight: "800", fontSize: "46px", lineHeight: "1", letterSpacing: "-0.04em" }}>2</span><span aria-hidden="true" style={{ width: "52px", height: "52px", borderRadius: "50%", background: "#FFFFFF", border: "3px solid #1C2541", display: "flex", alignItems: "center", justifyContent: "center" }}><svg className="ic" width="26" height="26" viewBox="0 0 24 24" style={{ strokeWidth: "2.2" }}><circle cx="12" cy="12" r="9"></circle><path d="M9.5 9.5a2.5 2.5 0 1 1 3.5 2.3c-.6.3-1 .8-1 1.5v.4"></path><path d="M12 16.8h.01" style={{ strokeWidth: "3" }}></path></svg></span></div>
+      <p style={{ fontSize: "17px", lineHeight: "1.4" }}><b style={{ display: "block", fontSize: "20px", lineHeight: "1.2", marginBottom: "4px" }}>Você não pediu nada.</b>O código chegou do nada.</p>
+      </li>
+      <li style={{ background: "#F0566B", borderRadius: "24px", padding: "20px 20px 24px", display: "flex", flexDirection: "column", gap: "12px", transform: "rotate(-0.8deg)", boxShadow: "6px 6px 0 rgba(0,0,0,.28)" }}>
+      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}><span aria-hidden="true" style={{ fontFamily: "'Lexend', sans-serif", fontWeight: "800", fontSize: "46px", lineHeight: "1", letterSpacing: "-0.04em" }}>3</span><span aria-hidden="true" style={{ width: "52px", height: "52px", borderRadius: "50%", background: "#FFFFFF", border: "3px solid #1C2541", display: "flex", alignItems: "center", justifyContent: "center" }}><svg className="ic" width="26" height="26" viewBox="0 0 24 24" style={{ strokeWidth: "2.2" }}><circle cx="12" cy="13.5" r="7.5"></circle><path d="M12 10v3.5l2.5 2"></path><path d="M9.5 2.5h5"></path></svg></span></div>
+      <p style={{ fontSize: "17px", lineHeight: "1.4" }}><b style={{ display: "block", fontSize: "20px", lineHeight: "1.2", marginBottom: "4px" }}>Pressa.</b>“Vence em 2 minutos.”</p>
+      </li>
+      <li style={{ background: "#9EDFC3", borderRadius: "24px", padding: "20px 20px 24px", display: "flex", flexDirection: "column", gap: "12px", transform: "rotate(1.2deg)", boxShadow: "6px 6px 0 rgba(0,0,0,.28)" }}>
+      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}><span aria-hidden="true" style={{ fontFamily: "'Lexend', sans-serif", fontWeight: "800", fontSize: "46px", lineHeight: "1", letterSpacing: "-0.04em" }}>4</span><span aria-hidden="true" style={{ width: "52px", height: "52px", borderRadius: "50%", background: "#FFFFFF", border: "3px solid #1C2541", display: "flex", alignItems: "center", justifyContent: "center" }}><svg className="ic" width="26" height="26" viewBox="0 0 24 24" style={{ strokeWidth: "2.2" }}><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"></path></svg></span></div>
+      <p style={{ fontSize: "17px", lineHeight: "1.4" }}><b style={{ display: "block", fontSize: "20px", lineHeight: "1.2", marginBottom: "4px" }}>Dizem ser de uma empresa,</b>mas o número é desconhecido.</p>
+      </li>
+      <li style={{ background: "#F6A5B3", borderRadius: "24px", padding: "20px 20px 24px", display: "flex", flexDirection: "column", gap: "12px", transform: "rotate(-1deg)", boxShadow: "6px 6px 0 rgba(0,0,0,.28)" }}>
+      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}><span aria-hidden="true" style={{ fontFamily: "'Lexend', sans-serif", fontWeight: "800", fontSize: "46px", lineHeight: "1", letterSpacing: "-0.04em" }}>5</span><span aria-hidden="true" style={{ width: "52px", height: "52px", borderRadius: "50%", background: "#FFFFFF", border: "3px solid #1C2541", display: "flex", alignItems: "center", justifyContent: "center" }}><svg className="ic" width="26" height="26" viewBox="0 0 24 24" style={{ strokeWidth: "2.2" }}><path d="M3 4.5h11a1 1 0 0 1 1 1v6a1 1 0 0 1-1 1H7.5L4 15.5V5.5a1 1 0 0 1-1-1z"></path><path d="M18 9h2a1 1 0 0 1 1 1v9.5L17.5 17H11a1 1 0 0 1-1-1v-1"></path></svg></span></div>
+      <p style={{ fontSize: "17px", lineHeight: "1.4" }}><b style={{ display: "block", fontSize: "20px", lineHeight: "1.2", marginBottom: "4px" }}>O SMS fala de WhatsApp,</b>mas a conversa era sobre outra coisa.</p>
+      </li>
+      </ol>
+      </div>
+      </div>
+      </section>
 
+      <section id="disfarces" data-readable="true" aria-labelledby="disfarces-title" style={{ padding: "clamp(72px, 9vw, 120px) 0" }}>
+      <div style={{ maxWidth: "1240px", margin: "0 auto", padding: "0 clamp(16px, 4vw, 40px)", display: "flex", flexDirection: "column", gap: "48px" }}>
+      <div style={{ display: "flex", flexDirection: "column", gap: "14px", alignItems: "center", textAlign: "center" }}>
+      <div style={{ display: "flex", alignItems: "flex-end", gap: "24px", textAlign: "left" }}><Cadu mood="alerta" size={76} /><p style={{ position: "relative", marginBottom: "26px", padding: "8px 16px", borderRadius: "18px", background: "#FFFFFF", border: "3px solid #1C2541", fontFamily: "'Permanent Marker', cursive", fontSize: "20px", lineHeight: "1.2", color: "#0E6B4B" }}>sempre o mesmo golpe, com outra desculpa:<svg aria-hidden="true" width="27" height="20" viewBox="0 0 27 20" style={{ position: "absolute", left: "-18px", bottom: "-1px", overflow: "visible" }}><path d="M27 3 L19 3 L2 18 L19 13 L27 13 Z" style={{ fill: "#FFFFFF" }}></path><path d="M19.5 3 L2 18 L19.5 13" style={{ fill: "none", stroke: "#1C2541", strokeWidth: "3", strokeLinejoin: "round", strokeLinecap: "round" }}></path></svg></p></div>
+      <h2 id="disfarces-title" style={{ fontFamily: "'Lexend', sans-serif", fontWeight: "800", fontSize: "clamp(34px, 4.4vw, 56px)", lineHeight: "1.04", letterSpacing: "-0.035em", maxWidth: "14em" }}>Os 6 disfarces de quem pede o código</h2>
+      </div>
+      <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 330px), 1fr))", gap: "16px" }}>
+      {(disguises).map((g, i2) => (<Fragment key={i2}>
+      <article className="cs-card" style={css(g.cardStyle)}>
+      <p style={css(g.eyebrowStyle)}>DISFARCE {g.num}</p>
+      <h3 style={{ fontFamily: "'Lexend', sans-serif", fontWeight: "800", fontSize: "24px", letterSpacing: "-0.02em", lineHeight: "1.15" }}>{g.title}</h3>
+      <p style={css(g.quoteStyle)}>{g.quote}</p>
+      <p style={{ display: "flex", gap: "10px", alignItems: "flex-start", marginTop: "auto", fontSize: "16px", lineHeight: "1.5" }}><span style={css(g.checkStyle)}><svg className="ic" width="14" height="14" viewBox="0 0 24 24" aria-hidden="true" style={{ strokeWidth: "3" }}><path d="M5 12.5 10 17l9-10"></path></svg></span><span><b>Faça:</b> {g.action}</span></p>
+      </article>
+      </Fragment>))}
+      </div>
+      </div>
+      </section>
 
 
 
