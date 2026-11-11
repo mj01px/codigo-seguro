@@ -616,6 +616,106 @@ export class Page extends Component {
       </div>
       </section>
 
+      <section id="conta" data-readable="true" aria-labelledby="conta-title" style={{ padding: "clamp(72px, 9vw, 128px) 0" }}>
+      <div style={{ maxWidth: "1240px", margin: "0 auto", padding: "0 clamp(16px, 4vw, 40px)", display: "flex", flexDirection: "column", gap: "clamp(56px, 7vw, 88px)" }}>
+      <div style={{ display: "flex", flexWrap: "wrap", gap: "40px 64px", alignItems: "center" }}>
+      <div style={{ flex: "1 1 460px", minWidth: "0", display: "flex", flexDirection: "column", gap: "18px" }}>
+      <div style={{ display: "flex", alignItems: "flex-end", gap: "24px", marginBottom: "4px" }}><Cadu mood="trancado" size={76} /><p style={{ position: "relative", marginBottom: "26px", display: "inline-flex", alignItems: "center", gap: "10px", padding: "8px 16px 8px 10px", borderRadius: "18px", background: "#FFFFFF", border: "3px solid #1C2541", fontFamily: "'Permanent Marker', cursive", fontSize: "20px", lineHeight: "1.2", color: "#0E6B4B" }}><span style={{ fontFamily: "'JetBrains Mono', monospace", fontWeight: "700", fontSize: "13px", padding: "4px 8px", borderRadius: "8px", background: "#0E6B4B", color: "#FFFFFF" }}>04</span>a proteção mais importante:<svg aria-hidden="true" width="27" height="20" viewBox="0 0 27 20" style={{ position: "absolute", left: "-21px", bottom: "0", overflow: "visible" }}><path d="M27 3 L19 3 L2 18 L19 13 L27 13 Z" style={{ fill: "#FFFFFF" }}></path><path d="M19.5 3 L2 18 L19.5 13" style={{ fill: "none", stroke: "#1C2541", strokeWidth: "3", strokeLinejoin: "round", strokeLinecap: "round" }}></path></svg></p></div>
+      <h2 id="conta-title" style={{ fontFamily: "'Lexend', sans-serif", fontWeight: "800", fontSize: "clamp(36px, 4.6vw, 60px)", lineHeight: "1.02", letterSpacing: "-0.035em" }}>Tranque seu WhatsApp com uma senha extra</h2>
+      <p style={{ maxWidth: "34em", fontSize: "18px", color: "#2E3550" }}>Isso se chama <b>verificação em duas etapas</b>. Você cria uma senha dentro do WhatsApp, uma vez só. Daí em diante, para abrir a sua conta em outro celular, é preciso <b>o código do SMS e a sua senha</b>.</p>
+      </div>
+      <div style={{ flex: "1 1 440px", minWidth: "0", display: "flex", flexDirection: "column", gap: "16px", background: "#FFD447", border: "3px solid #1C2541", boxShadow: "8px 8px 0 #1C2541", borderRadius: "28px", padding: "clamp(20px, 3vw, 32px)" }}>
+      <div style={{ display: "flex", alignItems: "center", gap: "14px" }}><Cadu mood="trancado" size={64} /><p style={{ fontWeight: "800", fontSize: "clamp(22px, 2.4vw, 28px)", letterSpacing: "-0.02em", lineHeight: "1.15" }}>Tranque com duas trancas</p></div>
+      <div role="img" aria-label="Código do SMS mais a sua senha é igual a conta trancada. O golpista consegue o código numa conversa, mas a senha só você sabe." style={{ display: "flex", flexWrap: "wrap", alignItems: "stretch", gap: "10px" }}>
+      <div style={{ flex: "1 1 130px", padding: "18px", borderRadius: "20px", background: "#FFFFFF", border: "3px solid #1C2541", display: "flex", flexDirection: "column", gap: "6px" }}>
+      <span style={{ fontSize: "11px", fontWeight: "600", letterSpacing: ".12em", color: "#4A5270" }}>CÓDIGO DO SMS</span>
+      <span style={{ fontFamily: "'JetBrains Mono', monospace", fontWeight: "700", fontSize: "24px" }}>482-719</span>
+      </div>
+      <span aria-hidden="true" style={{ alignSelf: "center", fontFamily: "'Lexend', sans-serif", fontWeight: "800", fontSize: "30px", color: "#1C2541" }}>+</span>
+      <div style={{ flex: "1 1 130px", padding: "18px", borderRadius: "20px", background: "#3DBE7E", border: "3px solid #1C2541", display: "flex", flexDirection: "column", gap: "6px" }}>
+      <span style={{ fontSize: "11px", fontWeight: "800", letterSpacing: ".12em", color: "#1C2541" }}>SUA SENHA</span>
+      <span style={{ fontFamily: "'JetBrains Mono', monospace", fontWeight: "700", fontSize: "24px", letterSpacing: ".1em" }}>••••••</span>
+      </div>
+      <span aria-hidden="true" style={{ alignSelf: "center", fontFamily: "'Lexend', sans-serif", fontWeight: "800", fontSize: "30px", color: "#1C2541" }}>=</span>
+      <div style={{ flex: "1 1 150px", padding: "18px", borderRadius: "20px", background: "#1C2541", border: "3px solid #1C2541", boxShadow: "4px 4px 0 #FFFFFF", color: "#FFFFFF", display: "flex", alignItems: "center", gap: "10px" }}>
+      <svg className="ic" width="34" height="34" viewBox="0 0 24 24" aria-hidden="true" style={{ color: "#9EDFC3", strokeWidth: "2.2" }}><path d="M12 3l7 3v5c0 4.5-3 8-7 10-4-2-7-5.5-7-10V6z"></path><path d="M8.8 12l2.3 2.3 4.3-4.6"></path></svg>
+      <span style={{ fontFamily: "'Lexend', sans-serif", fontWeight: "800", fontSize: "19px", lineHeight: "1.1" }}>conta trancada!</span>
+      </div>
+      </div>
+      <p style={{ fontSize: "16px", color: "#2E3550" }}>O golpista consegue o código numa conversa. <b>A senha, só você sabe.</b> Sem ela, ele não entra.</p>
+      </div>
+      </div>
+
+      <div style={{ background: "#FFFFFF", border: "3px solid #1C2541", boxShadow: "8px 8px 0 #1C2541", borderRadius: "32px", padding: "clamp(24px, 4vw, 48px)", display: "flex", flexDirection: "column", gap: "36px" }}>
+      <div style={{ display: "flex", flexWrap: "wrap", alignItems: "center", justifyContent: "space-between", gap: "16px" }}>
+      <h3 style={{ fontFamily: "'Lexend', sans-serif", fontWeight: "800", fontSize: "clamp(26px, 3vw, 34px)", letterSpacing: "-0.03em" }}>Ative em 1 minuto</h3>
+      <div role="group" aria-label="Seu celular" style={{ display: "inline-flex", gap: "4px", padding: "4px", borderRadius: "999px", background: "#FFFFFF", border: "3px solid #1C2541", boxShadow: "4px 4px 0 #1C2541" }}>
+      {(platforms).map((pl, i7) => (<Fragment key={i7}>
+      <button type="button" onClick={pl.pick} aria-pressed={pl.pressed} style={css(pl.style)}>{pl.label}</button>
+      </Fragment>))}
+      </div>
+      </div>
+      <ol style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 210px), 1fr))", gap: "32px 20px" }}>
+      {(howto).map((st, i8) => (<Fragment key={i8}>
+      <li style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: "18px" }}>
+      <div aria-hidden="true" style={{ position: "relative", width: "188px", height: "372px", borderRadius: "38px", background: "#1C2541", padding: "10px", flexShrink: "0", transform: `rotate(${st.tilt})` }}>
+      <span style={{ position: "absolute", left: "-6px", top: "86px", width: "8px", height: "30px", borderRadius: "4px 0 0 4px", background: "#1C2541" }}></span>
+      <span style={{ position: "absolute", left: "-6px", top: "126px", width: "8px", height: "42px", borderRadius: "4px 0 0 4px", background: "#1C2541" }}></span>
+      <span style={{ position: "absolute", right: "-6px", top: "106px", width: "8px", height: "58px", borderRadius: "0 4px 4px 0", background: "#1C2541" }}></span>
+      <div style={{ position: "relative", width: "100%", height: "100%", borderRadius: "29px", overflow: "hidden", background: "#FFFFFF", fontSize: "11px", lineHeight: "1.3", color: "#1C2541" }}>
+      <span style={{ position: "absolute", top: "9px", left: "50%", marginLeft: "-31px", width: "62px", height: "18px", borderRadius: "999px", background: "#1C2541", zIndex: "2" }}></span>
+      <span style={{ position: "absolute", bottom: "6px", left: "50%", marginLeft: "-32px", width: "64px", height: "4px", borderRadius: "999px", background: "#1C2541", zIndex: "3" }}></span>
+      {(st.isMenu) && (<>
+      <div style={{ padding: "34px 12px 0", display: "flex", justifyContent: "space-between", alignItems: "center", fontWeight: "700", fontSize: "14px", color: "#0E6B4B" }}>WhatsApp<svg width="14" height="14" viewBox="0 0 24 24" style={{ fill: "#1C2541" }}><circle cx="12" cy="5" r="2.2"></circle><circle cx="12" cy="12" r="2.2"></circle><circle cx="12" cy="19" r="2.2"></circle></svg></div>
+      <div style={{ padding: "10px 12px", display: "flex", flexDirection: "column", gap: "12px" }}>
+      {(ghost5).map((gh, i9) => (<Fragment key={i9}><span style={{ display: "flex", gap: "8px", alignItems: "center" }}><span style={{ width: "24px", height: "24px", borderRadius: "50%", background: "#E3E8F0" }}></span><span style={{ flex: "1", display: "flex", flexDirection: "column", gap: "4px" }}><span style={{ height: "5px", width: "70%", borderRadius: "3px", background: "#E3E8F0" }}></span><span style={{ height: "5px", width: "45%", borderRadius: "3px", background: "#EEF1F6" }}></span></span></span></Fragment>))}
+      </div>
+      <div style={{ position: "absolute", top: "52px", right: "8px", width: "120px", background: "#FFFFFF", borderRadius: "10px", boxShadow: "0 10px 24px -8px rgba(28,37,65,.4)", border: "1px solid #E6E0D2", padding: "4px", display: "flex", flexDirection: "column" }}>
+      <span style={{ padding: "8px", fontSize: "10.5px" }}>Novo grupo</span>
+      <span style={{ padding: "8px", fontSize: "10.5px" }}>Mensagens favoritas</span>
+      <span style={{ padding: "8px", fontSize: "10.5px", fontWeight: "700", background: "#FFF4CC", borderRadius: "7px", outline: "1.5px solid #1C2541" }}>Configurações</span>
+      </div>
+      </>)}
+      {(st.isTabs) && (<>
+      <div style={{ padding: "34px 12px 0", fontWeight: "700", fontSize: "14px" }}>Conversas</div>
+      <div style={{ padding: "10px 12px", display: "flex", flexDirection: "column", gap: "12px" }}>
+      {(ghost4).map((gh, i10) => (<Fragment key={i10}><span style={{ display: "flex", gap: "8px", alignItems: "center" }}><span style={{ width: "24px", height: "24px", borderRadius: "50%", background: "#E3E8F0" }}></span><span style={{ flex: "1", display: "flex", flexDirection: "column", gap: "4px" }}><span style={{ height: "5px", width: "70%", borderRadius: "3px", background: "#E3E8F0" }}></span><span style={{ height: "5px", width: "45%", borderRadius: "3px", background: "#EEF1F6" }}></span></span></span></Fragment>))}
+      </div>
+      <div style={{ position: "absolute", left: "0", right: "0", bottom: "0", padding: "8px 6px 18px", borderTop: "1px solid #E6E0D2", background: "#FAFAFC", display: "grid", gridTemplateColumns: "repeat(3, minmax(0, 1fr))", textAlign: "center", fontSize: "9.5px" }}>
+      <span style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: "3px", color: "#5B6170" }}><span style={{ width: "16px", height: "16px", borderRadius: "5px", background: "#D5DBE6" }}></span>Ligações</span>
+      <span style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: "3px", color: "#5B6170" }}><span style={{ width: "16px", height: "16px", borderRadius: "5px", background: "#D5DBE6" }}></span>Conversas</span>
+      <span style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: "3px", fontWeight: "700", background: "#FFF4CC", borderRadius: "8px", outline: "1.5px solid #1C2541", padding: "2px 0" }}><span style={{ width: "16px", height: "16px", borderRadius: "50%", background: "#1C2541" }}></span>Você</span>
+      </div>
+      </>)}
+      {(st.isList) && (<>
+      <div style={{ padding: "34px 12px 8px", display: "flex", alignItems: "center", gap: "4px", fontWeight: "700", fontSize: "14px" }}>{(st.back) && (<><svg className="ic" width="12" height="12" viewBox="0 0 24 24" style={{ strokeWidth: "3" }}><path d="M15 5l-7 7 7 7"></path></svg></>)}{st.title}</div>
+      {(st.profile) && (<>
+      <div style={{ margin: "0 12px 8px", display: "flex", gap: "8px", alignItems: "center", paddingBottom: "10px", borderBottom: "1px solid #EEF1F6" }}><span style={{ width: "34px", height: "34px", borderRadius: "50%", background: "#E3E8F0" }}></span><span style={{ flex: "1", display: "flex", flexDirection: "column", gap: "4px" }}><span style={{ height: "6px", width: "60%", borderRadius: "3px", background: "#E3E8F0" }}></span><span style={{ height: "5px", width: "40%", borderRadius: "3px", background: "#EEF1F6" }}></span></span></div>
+      </>)}
+      <div style={{ padding: "0 8px", display: "flex", flexDirection: "column", gap: "2px" }}>
+      {(st.rows).map((r, i11) => (<Fragment key={i11}><span style={css(r.style)}><span>{r.label}</span><svg className="ic" width="10" height="10" viewBox="0 0 24 24" style={{ strokeWidth: "3" }}><path d="M9 5l7 7-7 7"></path></svg></span></Fragment>))}
+      </div>
+      </>)}
+      {(st.isForm) && (<>
+      <div style={{ padding: "34px 12px 0", display: "flex", alignItems: "center", gap: "4px", fontWeight: "700", fontSize: "14px" }}><svg className="ic" width="12" height="12" viewBox="0 0 24 24" style={{ strokeWidth: "3" }}><path d="M15 5l-7 7 7 7"></path></svg>Duas etapas</div>
+      <div style={{ padding: "26px 14px 0", display: "flex", flexDirection: "column", alignItems: "center", gap: "10px", textAlign: "center" }}>
+      <span style={{ width: "46px", height: "46px", borderRadius: "50%", background: "#D3F1E3", color: "#0E6B4B", display: "flex", alignItems: "center", justifyContent: "center" }}><svg className="ic" width="22" height="22" viewBox="0 0 24 24" style={{ strokeWidth: "2.4" }}><rect x="5" y="11" width="14" height="10" rx="2.5"></rect><path d="M8 11V8a4 4 0 0 1 8 0v3"></path></svg></span>
+      <span style={{ fontWeight: "700", fontSize: "13px" }}>Crie uma senha</span>
+      <span style={{ width: "100%", padding: "8px", borderRadius: "8px", border: "1.5px solid #1C2541", fontFamily: "'JetBrains Mono', monospace", letterSpacing: ".2em", fontSize: "12px" }}>••••••••</span>
+      <span style={{ fontSize: "9.5px", color: "#5B6170" }}>8 ou mais, com letra e número</span>
+      <span style={{ marginTop: "26px", width: "100%", padding: "9px", borderRadius: "999px", background: "#0E6B4B", color: "#FFFFFF", fontWeight: "700", fontSize: "11px" }}>Avançar</span>
+      </div>
+      </>)}
+      </div>
+      </div>
+      <p style={{ display: "flex", gap: "12px", alignItems: "flex-start", maxWidth: "260px", fontSize: "16px", lineHeight: "1.5" }}><span aria-hidden="true" style={css(st.numStyle)}>{st.num}</span><span>{(st.caption).map((seg, i12) => (<Fragment key={i12}>{(seg.b) && (<><b>{seg.t}</b></>)}{(seg.n) && (<>{seg.t}</>)}</Fragment>))}</span></p>
+      </li>
+      </Fragment>))}
+      </ol>
+      <p style={{ display: "flex", gap: "12px", alignItems: "flex-start", padding: "16px 20px", borderRadius: "18px", background: "#FFF4CC", border: "3px solid #1C2541", fontSize: "16px" }}><svg className="ic" width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" style={{ marginTop: "3px" }}><circle cx="12" cy="12" r="9"></circle><path d="M12 11v5"></path><path d="M12 8h.01"></path></svg><span>Em alguns celulares aparece um <b>PIN de 6 números</b> no lugar da senha, e os menus mudam um pouco de nome. Funciona do mesmo jeito.</span></p>
+      </div>
+      </div>
+      </section>
 
 
 
