@@ -846,7 +846,46 @@ export class Page extends Component {
       </div>
       </section>
 
+      <section id="familia" data-readable="true" aria-labelledby="familia-title" style={{ background: "#3DBE7E", borderTop: "3px solid #1C2541", borderBottom: "3px solid #1C2541", padding: "clamp(64px, 8vw, 96px) 0" }}>
+      <div style={{ maxWidth: "1240px", margin: "0 auto", padding: "0 clamp(16px, 4vw, 40px)", display: "flex", flexWrap: "wrap", alignItems: "center", gap: "48px 64px" }}>
+      <div style={{ flex: "1 1 520px", minWidth: "0", display: "flex", flexDirection: "column", gap: "14px" }}>
+      <p style={{ fontFamily: "'Permanent Marker', cursive", fontSize: "25px", lineHeight: "1.1", color: "#1C2541" }}>para a família:</p>
+      <h2 id="familia-title" style={{ fontFamily: "'Lexend', sans-serif", fontWeight: "800", fontSize: "clamp(36px, 4.6vw, 58px)", lineHeight: "1", letterSpacing: "-0.035em" }}>Passe adiante para quem você ama</h2>
+      <p style={{ maxWidth: "32em", fontSize: "18px", fontWeight: "500", color: "#1C2541" }}>Os mais velhos são os alvos preferidos. Escolha o jeito mais fácil de avisar: pelo celular ou no papel.</p>
+      <figure style={{ margin: "18px 0 0", padding: "clamp(22px, 3vw, 30px)", background: "#FBF8F1", border: "3px solid #1C2541", borderRadius: "26px", boxShadow: "10px 10px 0 #1C2541", transform: "rotate(-1.5deg)" }}>
+      <blockquote style={{ margin: "0", fontSize: "clamp(17px, 1.6vw, 20px)", fontWeight: "700", lineHeight: "1.45" }}>“Gente, nunca passem o código que chega por SMS para ninguém. Quem pede é golpista. Vejam o guia: <span style={{ color: "#0E6B4B", textDecoration: "underline", overflowWrap: "anywhere" }}>codigoseguro.pages.dev</span>”</blockquote>
+      <div style={{ display: "flex", flexWrap: "wrap", gap: "12px", marginTop: "22px" }}>
+      <button type="button" className="cs-btn" onClick={share} style={{ display: "inline-flex", alignItems: "center", gap: "10px", minHeight: "52px", padding: "0 26px", borderRadius: "999px", border: "3px solid #1C2541", background: "#1C2541", color: "#FFFFFF", boxShadow: "4px 4px 0 #FFD447", fontWeight: "700", fontSize: "16px" }}><svg className="ic" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><path d="M8.6 13.5l6.8 4"></path><path d="M15.4 6.5l-6.8 4"></path></svg>{shareLabel}</button>
+      </div>
+      <span role="status" style={{ position: "absolute", left: "-9999px" }}>{shareStatus}</span>
+      </figure>
+      </div>
+      <div aria-hidden="true" style={{ flex: "0 1 320px", margin: "0 auto", display: "flex", flexDirection: "column", alignItems: "center", gap: "22px" }}>
+      <p style={{ position: "relative", transform: "rotate(4deg)", padding: "12px 22px 13px", borderRadius: "22px", background: "#FFFFFF", border: "3px solid #1C2541", fontFamily: "'Permanent Marker', cursive", fontSize: "clamp(22px, 2.4vw, 28px)", lineHeight: "1.1", textAlign: "center", color: "#1C2541" }}>Manda no grupo<br />da família!<svg width="24" height="18" viewBox="0 0 24 18" style={{ position: "absolute", top: "100%", left: "50%", margin: "-3px 0 0 -12px", overflow: "visible" }}><path d="M2 -2 L2 0 L12 16 L22 0 L22 -2 Z" style={{ fill: "#FFFFFF" }}></path><path d="M2 0 L12 16 L22 0" style={{ fill: "none", stroke: "#1C2541", strokeWidth: "3", strokeLinejoin: "round" }}></path></svg></p>
+      <div style={{ transform: "rotate(10deg)" }}><Cadu mood="trancado" size={220} /></div>
+      </div>
+      </div>
+      </section>
 
+      <section id="panfleto" data-readable="true" aria-labelledby="panfleto-title" style={{ padding: "clamp(72px, 9vw, 104px) 0 clamp(80px, 10vw, 120px)" }}>
+      <div style={{ maxWidth: "1240px", margin: "0 auto", padding: "0 clamp(16px, 4vw, 40px)", display: "flex", flexWrap: "wrap", alignItems: "center", gap: "48px 64px" }}>
+      <div style={{ flex: "1 1 480px", minWidth: "0", display: "flex", flexDirection: "column", alignItems: "flex-start", gap: "18px" }}>
+      <p style={{ fontFamily: "'Permanent Marker', cursive", fontSize: "25px", lineHeight: "1.1", color: "#0E6B4B" }}>no papel:</p>
+      <h2 id="panfleto-title" style={{ fontFamily: "'Lexend', sans-serif", fontWeight: "800", fontSize: "clamp(36px, 4.6vw, 58px)", lineHeight: "1", letterSpacing: "-0.035em" }}>Imprima o panfleto. <span style={{ background: "linear-gradient(transparent 58%, #FFD447 58%, #FFD447 92%, transparent 92%)", padding: "0 4px" }}>Toque para virar.</span></h2>
+      <p style={{ maxWidth: "32em", fontSize: "18px", color: "#2E3550" }}>É o mesmo panfleto que a gente entregou. Imprima e deixe com seus pais, na portaria, na igreja ou no posto de saúde.</p>
+      <div style={{ display: "flex", flexWrap: "wrap", gap: "12px", marginTop: "6px" }}>
+      <a href="/panfleto/panfleto.pdf" download="panfleto.pdf" className="cs-btn" style={{ display: "inline-flex", alignItems: "center", gap: "10px", minHeight: "52px", padding: "0 24px", borderRadius: "999px", border: "3px solid #1C2541", background: "#0E6B4B", color: "#FFFFFF", boxShadow: "4px 4px 0 #1C2541", fontWeight: "700", fontSize: "16px", textDecoration: "none" }}><svg className="ic" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" style={{ strokeWidth: "2.4" }}><path d="M12 4v11m0 0l-4.5-4.5M12 15l4.5-4.5M5 20h14"></path></svg>Baixar para imprimir (PDF)</a>
+      <button type="button" className="cs-btn" onClick={flip} aria-pressed={flippedAttr} style={{ display: "inline-flex", alignItems: "center", gap: "10px", minHeight: "52px", padding: "0 22px", borderRadius: "999px", border: "3px solid #1C2541", background: "#FFFFFF", color: "#1C2541", boxShadow: "4px 4px 0 #1C2541", fontWeight: "700", fontSize: "16px" }}><svg className="ic" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" style={{ strokeWidth: "2.4" }}><path d="M4 12a8 8 0 1 0 2.5-5.8"></path><path d="M4 3v4h4"></path></svg>{flipBtnLabel}</button>
+      </div>
+      </div>
+      <button type="button" onClick={flip} aria-label={flipLabel} style={{ flex: "0 0 auto", width: "min(300px, 100%)", aspectRatio: "1122 / 2382", padding: "0", border: "0", background: "transparent", perspective: "1400px", margin: "0 auto" }}>
+      <span className="cs-flip" style={{ position: "relative", display: "block", width: "100%", height: "100%", transformStyle: "preserve-3d", transform: `rotate(3deg) rotateY(${flipDeg})` }}>
+      <img src="/panfleto/frente.png" alt={frontAlt} style={{ position: "absolute", inset: "0", width: "100%", height: "100%", objectFit: "cover", background: "#FFFFFF", border: "3px solid #1C2541", borderRadius: "18px", boxShadow: "12px 12px 0 #FFD447", backfaceVisibility: "hidden", WebkitBackfaceVisibility: "hidden" }} />
+      <img src="/panfleto/verso.png" alt={backAlt} style={{ position: "absolute", inset: "0", width: "100%", height: "100%", objectFit: "cover", background: "#FFFFFF", border: "3px solid #1C2541", borderRadius: "18px", boxShadow: "12px 12px 0 #FFD447", backfaceVisibility: "hidden", WebkitBackfaceVisibility: "hidden", transform: "rotateY(180deg)" }} />
+      </span>
+      </button>
+      </div>
+      </section>
 
       </main>
 
