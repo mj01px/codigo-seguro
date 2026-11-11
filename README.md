@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="docs/banner.png" alt="Código Seguro: nunca passe o código do seu WhatsApp! Ilustração de um golpista pedindo o código por telefone enquanto o SMS chega no celular." width="100%">
+  <img src="docs/banner.png" alt="Código Seguro: antes de responder, pare e confirme. Um número desconhecido pede o código que chegou por SMS, e o Cadu, o cadeado mascote, desconfia." width="100%">
 </p>
 
 <p align="center">
@@ -17,13 +17,13 @@
 
 ## O golpe
 
-<img src="docs/golpe.png" alt="Como o golpe acontece: 1, ligam fingindo ser alguém de loja, banco, entrega ou pesquisa. 2, pedem o código do SMS. 3, pedem Pix no seu nome para a sua família. Regra de ouro: nenhuma empresa precisa do código do seu WhatsApp, quem pede é golpista." width="100%">
+<img src="docs/golpe.png" alt="Como o golpe acontece: 1, ligam fingindo ser alguém. 2, pedem o código do SMS. 3, entram no seu WhatsApp e pedem Pix para a sua família. A regra: o código do SMS é só seu. Pediu, é golpe. Seja quem for." width="100%">
 
 ## O site
 
 Feito para ser aberto no celular, depois de receber o panfleto. Tudo em português simples, sem termo técnico.
 
-<img src="docs/vitrine.png" alt="Quatro celulares mostrando o site: a abertura, o teste do golpe, o passo a passo para trancar o WhatsApp e o que fazer se já roubaram a conta." width="100%">
+<img src="docs/vitrine.png" alt="Quatro celulares mostrando o site: a abertura, o simulador do golpe, o passo a passo para trancar o WhatsApp e o que fazer se você passou o código." width="100%">
 
 - **Simulador:** uma conversa de golpe dentro de um celular. A pessoa escolhe o que responder e vê o que acontece.
 - **Tranque seu WhatsApp:** o passo a passo da verificação em duas etapas no Android e no iPhone, com as telas do app.
