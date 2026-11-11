@@ -307,11 +307,11 @@ export class Page extends Component {
 
       <header style={{ position: "sticky", top: "0", zIndex: "40", background: "rgba(251,248,241,.94)", backdropFilter: "blur(6px)", WebkitBackdropFilter: "blur(6px)", borderBottom: "2px solid transparent" }}>
       <div style={{ maxWidth: "1240px", minHeight: "76px", margin: "0 auto", padding: "10px clamp(16px, 3vw, 24px)", display: "flex", alignItems: "center", justifyContent: "space-between", gap: "12px" }}>
-      <a href="#inicio" style={{ display: "flex", alignItems: "center", gap: "10px", textDecoration: "none", color: "#1C2541", flexShrink: "0" }}>
+      <a href="#inicio" className="cs-brand" style={{ display: "flex", alignItems: "center", gap: "10px", textDecoration: "none", color: "#1C2541", flexShrink: "0" }}>
       <Cadu mood="alerta" size={44} />
       <span style={{ display: "flex", flexDirection: "column", lineHeight: "1.1" }}>
-      <span style={{ fontFamily: "'Lexend', sans-serif", fontWeight: "800", fontSize: "22px", letterSpacing: "-0.02em", whiteSpace: "nowrap" }}>Código Seguro</span>
-      <span style={{ fontSize: "12.5px", fontWeight: "700", color: "#4A5270", whiteSpace: "nowrap" }}>Universidade de Mogi das Cruzes</span>
+      <span className="cs-brand-name" style={{ fontFamily: "'Lexend', sans-serif", fontWeight: "800", fontSize: "22px", letterSpacing: "-0.02em", whiteSpace: "nowrap" }}>Código Seguro</span>
+      <span className="cs-brand-sub" style={{ fontSize: "12.5px", fontWeight: "700", color: "#4A5270", whiteSpace: "nowrap" }}>Universidade de Mogi das Cruzes</span>
       </span>
       </a>
       <nav className="cs-nav-d" aria-label="Partes do guia" style={{ display: "flex", gap: "4px" }}>
@@ -415,19 +415,19 @@ export class Page extends Component {
 
       <div style={{ display: "flex", flexDirection: "column", gap: "24px" }}>
       <div style={{ display: "flex", alignItems: "center", gap: "14px" }}><Cadu mood="assustado" size={64} /><p style={{ fontFamily: "'Lexend', sans-serif", fontWeight: "800", fontSize: "clamp(26px, 3vw, 36px)", letterSpacing: "-0.03em", lineHeight: "1.1" }}>Com a sua conta, <span style={{ color: "#A61E3A" }}>o golpista:</span></p></div>
-      <ol style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 260px), 1fr))", gap: "40px", marginTop: "16px" }}>
+      <ol className="cs-harm" style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 260px), 1fr))", gap: "40px", marginTop: "16px" }}>
       <li style={{ display: "flex", flexDirection: "column", gap: "12px" }}>
-      <span aria-hidden="true" style={{ position: "relative", width: "150px", height: "150px", marginBottom: "6px", borderRadius: "50%", background: "#3DBE7E", border: "3px solid #1C2541", boxShadow: "6px 6px 0 #1C2541", color: "#1C2541", display: "flex", alignItems: "center", justifyContent: "center" }}><svg className="ic" width="70" height="70" style={{ strokeWidth: "2.2" }} viewBox="0 0 24 24"><path d="M4 5h16a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H9l-5 4V6a1 1 0 0 1 1-1z"></path><path d="M8 9.5h8"></path><path d="M8 12.5h5"></path></svg><span style={{ position: "absolute", left: "-6px", top: "-6px", width: "44px", height: "44px", borderRadius: "50%", background: "#1C2541", color: "#FBF8F1", display: "flex", alignItems: "center", justifyContent: "center", fontWeight: "800", fontSize: "20px" }}>a</span></span>
-      <h3 style={{ fontWeight: "800", fontSize: "23px", lineHeight: "1.2", letterSpacing: "-0.02em" }}>Lê suas conversas e vê seus contatos.</h3>
+      <span aria-hidden="true" className="cs-harm-dot" style={{ position: "relative", width: "150px", height: "150px", marginBottom: "6px", borderRadius: "50%", background: "#3DBE7E", border: "3px solid #1C2541", boxShadow: "6px 6px 0 #1C2541", color: "#1C2541", display: "flex", alignItems: "center", justifyContent: "center" }}><svg className="ic" width="70" height="70" style={{ strokeWidth: "2.2" }} viewBox="0 0 24 24"><path d="M4 5h16a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H9l-5 4V6a1 1 0 0 1 1-1z"></path><path d="M8 9.5h8"></path><path d="M8 12.5h5"></path></svg><span style={{ position: "absolute", left: "-6px", top: "-6px", width: "44px", height: "44px", borderRadius: "50%", background: "#1C2541", color: "#FBF8F1", display: "flex", alignItems: "center", justifyContent: "center", fontWeight: "800", fontSize: "20px" }}>a</span></span>
+      <div style={{ display: "flex", flexDirection: "column", gap: "12px" }}><h3 style={{ fontWeight: "800", fontSize: "23px", lineHeight: "1.2", letterSpacing: "-0.02em" }}>Lê suas conversas e vê seus contatos.</h3></div>
       </li>
       <li style={{ display: "flex", flexDirection: "column", gap: "12px" }}>
-      <span aria-hidden="true" style={{ position: "relative", width: "150px", height: "150px", marginBottom: "6px", borderRadius: "50%", background: "#FFD447", border: "3px solid #1C2541", boxShadow: "6px 6px 0 #1C2541", color: "#1C2541", display: "flex", alignItems: "center", justifyContent: "center" }}><svg className="ic" width="70" height="70" style={{ strokeWidth: "2.2" }} viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="12" rx="2"></rect><circle cx="12" cy="12" r="2.5"></circle><path d="M6.5 9.5v5"></path><path d="M17.5 9.5v5"></path></svg><span style={{ position: "absolute", left: "-6px", top: "-6px", width: "44px", height: "44px", borderRadius: "50%", background: "#1C2541", color: "#FBF8F1", display: "flex", alignItems: "center", justifyContent: "center", fontWeight: "800", fontSize: "20px" }}>b</span></span>
-      <h3 style={{ fontWeight: "800", fontSize: "23px", lineHeight: "1.2", letterSpacing: "-0.02em" }}>Pede dinheiro para a sua família em seu nome.</h3>
-      <p style={{ fontSize: "17px", color: "#2E3550" }}>É o objetivo dele.</p>
+      <span aria-hidden="true" className="cs-harm-dot" style={{ position: "relative", width: "150px", height: "150px", marginBottom: "6px", borderRadius: "50%", background: "#FFD447", border: "3px solid #1C2541", boxShadow: "6px 6px 0 #1C2541", color: "#1C2541", display: "flex", alignItems: "center", justifyContent: "center" }}><svg className="ic" width="70" height="70" style={{ strokeWidth: "2.2" }} viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="12" rx="2"></rect><circle cx="12" cy="12" r="2.5"></circle><path d="M6.5 9.5v5"></path><path d="M17.5 9.5v5"></path></svg><span style={{ position: "absolute", left: "-6px", top: "-6px", width: "44px", height: "44px", borderRadius: "50%", background: "#1C2541", color: "#FBF8F1", display: "flex", alignItems: "center", justifyContent: "center", fontWeight: "800", fontSize: "20px" }}>b</span></span>
+      <div style={{ display: "flex", flexDirection: "column", gap: "12px" }}><h3 style={{ fontWeight: "800", fontSize: "23px", lineHeight: "1.2", letterSpacing: "-0.02em" }}>Pede dinheiro para a sua família em seu nome.</h3>
+      <p style={{ fontSize: "17px", color: "#2E3550" }}>É o objetivo dele.</p></div>
       </li>
       <li style={{ display: "flex", flexDirection: "column", gap: "12px" }}>
-      <span aria-hidden="true" style={{ position: "relative", width: "150px", height: "150px", marginBottom: "6px", borderRadius: "50%", background: "#F0566B", border: "3px solid #1C2541", boxShadow: "6px 6px 0 #1C2541", color: "#1C2541", display: "flex", alignItems: "center", justifyContent: "center" }}><svg className="ic" width="70" height="70" style={{ strokeWidth: "2.2" }} viewBox="0 0 24 24"><rect x="5" y="11" width="14" height="10" rx="2.5"></rect><path d="M8 11V8a4 4 0 0 1 8 0v3"></path><path d="M9.5 16h.01"></path><path d="M12 16h.01"></path><path d="M14.5 16h.01"></path></svg><span style={{ position: "absolute", left: "-6px", top: "-6px", width: "44px", height: "44px", borderRadius: "50%", background: "#A61E3A", color: "#FFFFFF", display: "flex", alignItems: "center", justifyContent: "center", fontWeight: "800", fontSize: "20px" }}>c</span></span>
-      <h3 style={{ fontWeight: "800", fontSize: "23px", lineHeight: "1.2", letterSpacing: "-0.02em" }}>Cria uma senha para você não conseguir voltar.</h3>
+      <span aria-hidden="true" className="cs-harm-dot" style={{ position: "relative", width: "150px", height: "150px", marginBottom: "6px", borderRadius: "50%", background: "#F0566B", border: "3px solid #1C2541", boxShadow: "6px 6px 0 #1C2541", color: "#1C2541", display: "flex", alignItems: "center", justifyContent: "center" }}><svg className="ic" width="70" height="70" style={{ strokeWidth: "2.2" }} viewBox="0 0 24 24"><rect x="5" y="11" width="14" height="10" rx="2.5"></rect><path d="M8 11V8a4 4 0 0 1 8 0v3"></path><path d="M9.5 16h.01"></path><path d="M12 16h.01"></path><path d="M14.5 16h.01"></path></svg><span style={{ position: "absolute", left: "-6px", top: "-6px", width: "44px", height: "44px", borderRadius: "50%", background: "#A61E3A", color: "#FFFFFF", display: "flex", alignItems: "center", justifyContent: "center", fontWeight: "800", fontSize: "20px" }}>c</span></span>
+      <div style={{ display: "flex", flexDirection: "column", gap: "12px" }}><h3 style={{ fontWeight: "800", fontSize: "23px", lineHeight: "1.2", letterSpacing: "-0.02em" }}>Cria uma senha para você não conseguir voltar.</h3></div>
       </li>
       </ol>
       </div>
@@ -629,12 +629,12 @@ export class Page extends Component {
       <div role="img" aria-label="Código do SMS mais a sua senha é igual a conta trancada. O golpista consegue o código numa conversa, mas a senha só você sabe." style={{ display: "flex", flexWrap: "wrap", alignItems: "stretch", gap: "10px" }}>
       <div style={{ flex: "1 1 130px", padding: "18px", borderRadius: "20px", background: "#FFFFFF", border: "3px solid #1C2541", display: "flex", flexDirection: "column", gap: "6px" }}>
       <span style={{ fontSize: "11px", fontWeight: "600", letterSpacing: ".12em", color: "#4A5270" }}>CÓDIGO DO SMS</span>
-      <span style={{ fontFamily: "'JetBrains Mono', monospace", fontWeight: "700", fontSize: "24px" }}>482-719</span>
+      <span style={{ fontFamily: "'JetBrains Mono', monospace", fontWeight: "700", fontSize: "clamp(17px, 4.6vw, 24px)", whiteSpace: "nowrap" }}>482-719</span>
       </div>
       <span aria-hidden="true" style={{ alignSelf: "center", fontFamily: "'Lexend', sans-serif", fontWeight: "800", fontSize: "30px", color: "#1C2541" }}>+</span>
       <div style={{ flex: "1 1 130px", padding: "18px", borderRadius: "20px", background: "#3DBE7E", border: "3px solid #1C2541", display: "flex", flexDirection: "column", gap: "6px" }}>
       <span style={{ fontSize: "11px", fontWeight: "800", letterSpacing: ".12em", color: "#1C2541" }}>SUA SENHA</span>
-      <span style={{ fontFamily: "'JetBrains Mono', monospace", fontWeight: "700", fontSize: "24px", letterSpacing: ".1em" }}>••••••</span>
+      <span style={{ fontFamily: "'JetBrains Mono', monospace", fontWeight: "700", fontSize: "clamp(17px, 4.6vw, 24px)", letterSpacing: ".1em", whiteSpace: "nowrap" }}>••••••</span>
       </div>
       <span aria-hidden="true" style={{ alignSelf: "center", fontFamily: "'Lexend', sans-serif", fontWeight: "800", fontSize: "30px", color: "#1C2541" }}>=</span>
       <div style={{ flex: "1 1 150px", padding: "18px", borderRadius: "20px", background: "#1C2541", border: "3px solid #1C2541", boxShadow: "4px 4px 0 #FFFFFF", color: "#FFFFFF", display: "flex", alignItems: "center", gap: "10px" }}>

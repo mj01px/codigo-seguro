@@ -42,3 +42,23 @@ button:disabled{cursor:default}
 @media (min-width: 901px){.cs-show-m{display:none !important}}
 @media (max-width: 640px){.cs-hero-scene{transform:scale(.84);transform-origin:top center;margin-bottom:-70px}}
 @media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}.cs-marquee,.cs-dot,.cs-msg{animation:none}.cs-flip,.cs-btn,.cs-opt{transition:none}}
+
+/* Celular: o topo cabe inteiro, com o botão "Passei o código" em duas linhas. */
+@media (max-width: 430px){
+.cs-brand{gap:8px !important}
+.cs-brand svg{width:36px;height:36px}
+.cs-brand-name{font-size:18px !important}
+.cs-brand-sub{font-size:10.5px !important}
+.cs-nav-m{white-space:normal !important;max-width:96px;text-align:center;line-height:1.15;padding:4px 12px !important;font-size:12px !important}
+}
+
+/* Celular: nos 3 cards do "Com a sua conta, o golpista", o texto fica ao lado da bolinha. */
+@media (max-width: 640px){
+.cs-harm{gap:22px !important;margin-top:4px !important}
+.cs-harm>li{flex-direction:row !important;align-items:center !important;gap:18px !important}
+.cs-harm-dot{width:84px !important;height:84px !important;flex-shrink:0;margin-bottom:0 !important;box-shadow:4px 4px 0 #1C2541 !important}
+.cs-harm-dot>svg{width:40px;height:40px}
+.cs-harm-dot>span{width:30px !important;height:30px !important;font-size:14px !important;left:-6px !important;top:-6px !important}
+.cs-harm h3{font-size:19px !important}
+.cs-harm p{font-size:15px !important}
+}
