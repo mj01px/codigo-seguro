@@ -717,6 +717,56 @@ export class Page extends Component {
       </div>
       </section>
 
+      <section id="video" data-readable="true" aria-labelledby="video-title" style={{ background: "#1C2541", color: "#FFFFFF", padding: "clamp(72px, 9vw, 120px) 0" }}>
+      <div style={{ maxWidth: "1240px", margin: "0 auto", padding: "0 clamp(16px, 4vw, 40px)", display: "flex", flexDirection: "column", gap: "44px" }}>
+      <div style={{ display: "flex", flexWrap: "wrap", gap: "20px 40px", alignItems: "flex-end", justifyContent: "space-between" }}>
+      <div style={{ flex: "1 1 520px", display: "flex", flexDirection: "column", gap: "16px", maxWidth: "680px" }}>
+      <div style={{ display: "flex", alignItems: "flex-end", gap: "24px" }}><Cadu mood="alerta" size={76} /><p style={{ position: "relative", marginBottom: "26px", display: "inline-flex", alignItems: "center", gap: "10px", padding: "8px 16px 8px 10px", borderRadius: "18px", background: "#FFD447", border: "3px solid #FFFFFF", fontFamily: "'Permanent Marker', cursive", fontSize: "20px", lineHeight: "1.2", color: "#1C2541" }}><span style={{ fontFamily: "'JetBrains Mono', monospace", fontWeight: "700", fontSize: "13px", padding: "4px 8px", borderRadius: "8px", background: "#1C2541", color: "#FFD447" }}>05</span>prefere assistir?<svg aria-hidden="true" width="27" height="20" viewBox="0 0 27 20" style={{ position: "absolute", left: "-21px", bottom: "0", overflow: "visible" }}><path d="M27 3 L19 3 L2 18 L19 13 L27 13 Z" style={{ fill: "#FFD447" }}></path><path d="M19.5 3 L2 18 L19.5 13" style={{ fill: "none", stroke: "#FFFFFF", strokeWidth: "3", strokeLinejoin: "round", strokeLinecap: "round" }}></path></svg></p></div>
+      <h2 id="video-title" style={{ fontFamily: "'Lexend', sans-serif", fontWeight: "800", fontSize: "clamp(36px, 4.6vw, 60px)", lineHeight: "1.02", letterSpacing: "-0.035em" }}>O golpe em <span style={{ color: "#FFD447" }}>7 minutos</span></h2>
+      <p style={{ fontSize: "18px", color: "#C9CFE0" }}>O Pablo quase caiu no golpe. Veja como ele percebeu a tempo e como trancar o WhatsApp, passo a passo, na tela do celular.</p>
+      </div>
+      </div>
+
+      <div style={{ display: "flex", flexWrap: "wrap", gap: "24px", alignItems: "stretch" }}>
+      <div style={{ flex: "999 1 560px", minWidth: "0" }}>
+      <div style={{ position: "relative", aspectRatio: "16 / 9", borderRadius: "24px", overflow: "hidden", background: "#0F1530", border: "1px solid rgba(255,255,255,.12)" }}>
+      {(videoPlaying) && (<>
+      <iframe
+        key={activeStart}
+        src={`https://www.youtube-nocookie.com/embed/${VIDEO.youtubeId}?autoplay=1&rel=0&cc_load_policy=1&cc_lang_pref=pt&hl=pt-BR&start=${activeStart}`}
+        title={`Vídeo: ${activeTitle}`}
+        allow="autoplay; encrypted-media; picture-in-picture; fullscreen"
+        allowFullScreen
+        referrerPolicy="strict-origin-when-cross-origin"
+        style={{ position: "absolute", inset: "0", width: "100%", height: "100%", border: "0" }}
+      />
+      </>)}
+      {(videoIdle) && (<>
+      <button type="button" onClick={playVideo} disabled={videoLocked} aria-label={coverLabel} style={{ position: "absolute", inset: "0", width: "100%", height: "100%", padding: "0", border: "0", background: "transparent", display: "block" }}>
+      <img src="/video/capa.png" alt="" style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
+      {(videoAvailable) && (<>
+      <span aria-hidden="true" className="cs-btn" style={{ position: "absolute", left: "50%", top: "50%", width: "96px", height: "96px", margin: "-48px 0 0 -48px", borderRadius: "50%", background: "#FFD447", color: "#1C2541", display: "flex", alignItems: "center", justifyContent: "center", boxShadow: "0 16px 40px -12px rgba(0,0,0,.6)" }}><svg width="38" height="38" viewBox="0 0 24 24" style={{ fill: "currentColor", marginLeft: "4px" }}><path d="M7 4.5v15l13-7.5z"></path></svg></span>
+      </>)}
+      {(videoLocked) && (<>
+      <span aria-hidden="true" style={{ position: "absolute", inset: "0", background: "rgba(15,21,48,.55)", display: "flex", alignItems: "center", justifyContent: "center" }}><span style={{ padding: "12px 22px", borderRadius: "999px", background: "#FFFFFF", color: "#1C2541", fontWeight: "700", fontSize: "16px", letterSpacing: ".02em" }}>Em breve</span></span>
+      </>)}
+      </button>
+      </>)}
+      </div>
+      </div>
+
+      <div style={{ flex: "1 1 320px", minWidth: "0", display: "flex", flexDirection: "column", gap: "14px" }}>
+      <p style={{ fontSize: "13px", fontWeight: "600", letterSpacing: ".12em", textTransform: "uppercase", color: "#C9CFE0" }}>O que você vai ver</p>
+      <ol style={{ display: "flex", flexDirection: "column", gap: "8px" }}>
+      {(chapters).map((c, i13) => (<Fragment key={i13}>
+      <li><button type="button" className="cs-chapter" onClick={c.pick} disabled={videoLocked} style={css(c.style)}><span style={{ fontFamily: "'JetBrains Mono', monospace", fontWeight: "700", fontSize: "14px", color: "#FFD447", minWidth: "42px", paddingTop: "2px" }}>{c.time}</span><span style={{ display: "flex", flexDirection: "column", gap: "2px", flex: "1" }}><span style={{ fontWeight: "600", fontSize: "16px", lineHeight: "1.35" }}>{c.title}</span><span style={{ fontSize: "14px", color: "#C9CFE0", lineHeight: "1.4" }}>{c.text}</span></span><svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" style={{ fill: "currentColor", opacity: ".7", marginTop: "4px", flexShrink: "0" }}><path d="M7 4.5v15l13-7.5z"></path></svg></button></li>
+      </Fragment>))}
+      </ol>
+      <p style={{ fontSize: "14px", color: "#AEB6CC", paddingLeft: "4px" }}>{videoHint}</p>
+      </div>
+      </div>
+      </div>
+      </section>
 
 
 
