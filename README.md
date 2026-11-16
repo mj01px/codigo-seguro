@@ -15,8 +15,6 @@
   <img src="https://img.shields.io/badge/data%20collected-none-A61E3A?labelColor=555" alt="Data collected: none">
 </p>
 
-> The website and the flyer are in Brazilian Portuguese, since they were made for a Brazilian audience.
-
 ## The scam
 
 <img src="docs/golpe.png" alt="How the scam works: 1, someone calls pretending to be someone else. 2, they ask for the SMS code. 3, they take over your WhatsApp and ask your family for Pix transfers. The rule: the SMS code is yours alone. If someone asks for it, it's a scam, no matter who they are." width="100%">
