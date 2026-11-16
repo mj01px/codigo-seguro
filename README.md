@@ -1,68 +1,70 @@
 <p align="center">
-  <img src="docs/banner.png" alt="Código Seguro: antes de responder, pare e confirme. Um número desconhecido pede o código que chegou por SMS, e o Cadu, o cadeado mascote, desconfia." width="100%">
+  <img src="docs/banner.png" alt="Código Seguro: before you reply, stop and check. An unknown number asks for the code that arrived by SMS, and Cadu, the padlock mascot, gets suspicious." width="100%">
 </p>
 
 <p align="center">
-  Um <b>site</b> e um <b>panfleto</b> para ensinar pessoas mais velhas e suas famílias<br>
-  a não cair no golpe do código do WhatsApp.
+  A <b>website</b> and a <b>flyer</b> that teach older adults and their families<br>
+  not to fall for the WhatsApp verification code scam.
 </p>
 
 <p align="center">
   <img src="https://img.shields.io/badge/React-18-0E6B4B?labelColor=555" alt="React 18">
   <img src="https://img.shields.io/badge/TypeScript-strict-1C2541?labelColor=555" alt="TypeScript strict">
   <img src="https://img.shields.io/badge/Vite-5-0E6B4B?labelColor=555" alt="Vite 5">
-  <img src="https://img.shields.io/badge/acess%C3%ADvel-A%2B%20e%20ouvir-B38800?labelColor=555" alt="Acessível: A+ e ouvir">
-  <img src="https://img.shields.io/badge/dados%20coletados-nenhum-A61E3A?labelColor=555" alt="Dados coletados: nenhum">
+  <img src="https://img.shields.io/badge/accessible-A%2B%20and%20listen-B38800?labelColor=555" alt="Accessible: A+ and listen">
+  <img src="https://img.shields.io/badge/data%20collected-none-A61E3A?labelColor=555" alt="Data collected: none">
 </p>
 
-## O golpe
+> The website and the flyer are in Brazilian Portuguese, since they were made for a Brazilian audience.
 
-<img src="docs/golpe.png" alt="Como o golpe acontece: 1, ligam fingindo ser alguém. 2, pedem o código do SMS. 3, entram no seu WhatsApp e pedem Pix para a sua família. A regra: o código do SMS é só seu. Pediu, é golpe. Seja quem for." width="100%">
+## The scam
 
-## O site
+<img src="docs/golpe.png" alt="How the scam works: 1, someone calls pretending to be someone else. 2, they ask for the SMS code. 3, they take over your WhatsApp and ask your family for Pix transfers. The rule: the SMS code is yours alone. If someone asks for it, it's a scam, no matter who they are." width="100%">
 
-Feito para ser aberto no celular, depois de receber o panfleto. Tudo em português simples, sem termo técnico.
+## The website
 
-<img src="docs/vitrine.png" alt="Quatro celulares mostrando o site: a abertura, o simulador do golpe, o passo a passo para trancar o WhatsApp e o que fazer se você passou o código." width="100%">
+Designed to be opened on a phone after receiving the flyer. Everything is written in plain language, with no technical jargon.
 
-- **Simulador:** uma conversa de golpe dentro de um celular. A pessoa escolhe o que responder e vê o que acontece.
-- **Tranque seu WhatsApp:** o passo a passo da verificação em duas etapas no Android e no iPhone, com as telas do app.
-- **Já roubaram?** O que fazer na hora, com o e-mail pronto para o suporte do WhatsApp.
-- **Família:** como conversar com os mais velhos sem dar bronca.
+<img src="docs/vitrine.png" alt="Four phones showing the website: the opening screen, the scam simulator, the step-by-step guide to lock down WhatsApp, and what to do if you already shared the code." width="100%">
 
-## Pensado para quem tem mais idade
+- **Simulator:** a scam conversation inside a phone. The user chooses how to reply and sees what happens.
+- **Lock down your WhatsApp:** a step-by-step guide to two-step verification on Android and iPhone, with screenshots of the app.
+- **Already hacked?** What to do right away, with a ready-to-send email for WhatsApp support.
+- **Family:** how to talk to older relatives without scolding them.
 
-- **A+** aumenta o texto do site inteiro, e **Ouvir** lê em voz alta a parte que está na tela.
-- Botões grandes, contraste alto e foco visível para quem usa o teclado.
-- Nenhum dado é coletado: sem cadastro, sem formulário, sem rastreamento.
+## Built for older users
 
-## Rodando o projeto
+- **A+** enlarges the text across the whole site, and **Listen** reads the visible section aloud.
+- Large buttons, high contrast, and a visible focus indicator for keyboard users.
+- No data is collected: no sign-up, no forms, no tracking.
+
+## Running the project
 
 ```bash
 npm install
-npm run dev     # abre o site no endereço que aparecer no terminal
-npm run build   # gera a versão final em dist/
+npm run dev     # opens the site at the address shown in the terminal
+npm run build   # builds the production version into dist/
 ```
 
 <details>
-<summary><b>Estrutura das pastas</b></summary>
+<summary><b>Folder structure</b></summary>
 
 ```
 src/
-├── components/   cabeçalho, rodapé, celular do panfleto, ícones e botões
-├── sections/     uma parte da página por arquivo (abertura, simulador, proteção...)
-├── hooks/        A+, leitura em voz alta e copiar texto
-├── lib/          roteiro do simulador e leitura da seção visível
-├── styles/       cores e estilos, tirados do panfleto
-└── types/        tipos compartilhados
+├── components/   header, footer, flyer phone, icons, and buttons
+├── sections/     one page section per file (opening, simulator, protection...)
+├── hooks/        A+, read-aloud, and copy text
+├── lib/          simulator script and visible-section reading
+├── styles/       colors and styles, taken from the flyer
+└── types/        shared types
 
-public/panfleto/  frente e verso do panfleto
-docs/             imagens deste README
+public/panfleto/  front and back of the flyer
+docs/             images for this README
 ```
 
 </details>
 
-## Quem fez
+## Authors
 
-**[Mauro Junior](https://github.com/mj01px)**, **[Pablo de Souza](https://github.com/1pablex)** e **[Victor Teixeira](https://github.com/VTNz19)**<br>
-Engenharia de Software, 8B Noturno · Universidade de Mogi das Cruzes · 2026
+**[Mauro Junior](https://github.com/mj01px)**, **[Pablo de Souza](https://github.com/1pablex)**, and **[Victor Teixeira](https://github.com/VTNz19)**<br>
+Software Engineering, 8B Evening · Universidade de Mogi das Cruzes · 2026
